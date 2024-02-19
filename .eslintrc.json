@@ -33,6 +33,7 @@
         "@tanstack/query/no-rest-destructuring": "warn",
         "@tanstack/query/stable-query-client": "error",
         "react/react-in-jsx-scope": "off",
-        "no-return-assign": "off"
+        "no-return-assign": "off",
+        "@tanstack/query/exhaustive-deps": "off"
     }
 }

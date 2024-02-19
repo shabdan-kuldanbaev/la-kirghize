@@ -38,8 +38,8 @@ export default defineType({
       type: 'localeRichText',
     }),
     defineField({
-      title: 'Words list',
       name: 'wordsList',
+      title: 'Words list',
       type: 'localeWordsList',
     }),
     defineField({
@@ -52,6 +52,36 @@ export default defineType({
           to: [{ type: 'content' }],
         },
       ],
+    }),
+    defineField({
+      title: 'Image list',
+      name: 'imageList',
+      type: 'array',
+      options: {
+        modal: { type: 'dialog', width: 'auto' },
+      },
+      of: [
+        {
+          title: 'Image',
+          name: 'image',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'attribution',
+              type: 'string',
+              title: 'Attribution',
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
+      title: 'Content file',
+      name: 'contentFile',
+      type: 'file',
     }),
   ],
 });

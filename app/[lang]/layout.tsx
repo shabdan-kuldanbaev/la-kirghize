@@ -16,24 +16,22 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata | null> {
-  try {
-    const { lang } = params;
-    const page = await client.fetch(META_GROQ, { slug: 'accueil' }, { cache: 'no-cache' });
-    const metaImage = urlForImage(page.metaImage);
+  const { lang } = params;
+  const page = await client.fetch(META_GROQ, { slug: 'accueil', lang }, { cache: 'no-cache' });
 
-    return {
-      metadataBase: new URL('https://la-kirghize.com'),
-      title: page.metaTitle[lang],
-      description: page.metaDescription[lang],
-      keywords: page.keywords?.[lang],
-      openGraph: {
-        images: [metaImage],
-      },
-      icons: ICONS,
-    };
-  } catch (e) {
-    return null;
-  }
+  if (!page) return null;
+
+  const metaImage = urlForImage(page.metaImage);
+  return {
+    metadataBase: new URL('https://la-kirghize.com'),
+    title: page.metaTitle,
+    description: page.metaDescription,
+    keywords: page.keywords,
+    openGraph: {
+      images: [metaImage],
+    },
+    icons: ICONS,
+  };
 }
 
 export async function generateStaticParams() {
