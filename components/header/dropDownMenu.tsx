@@ -66,7 +66,7 @@ function DropDownMenu(
                               key={item.path}
                               className="max-w-72"
                             >
-                              <Link href={item.path}>
+                              <Link href={item.path} onClick={() => setOpen(false)}>
                                 <Card className="bg-inherit border-none rounded-none shadow-none">
                                   <div
                                     className="rounded-xl w-auto h-auto bg-cover bg-no-repeat bg-zinc-300 aspect-square"

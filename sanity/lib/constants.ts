@@ -8,5 +8,5 @@ export const supportedLanguages = [
 ];
 
 export const sectionTypes = [
-  { title: '', value: '' },
+  { title: 'Hero section', value: 'hero' },
 ];
