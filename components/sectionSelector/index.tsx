@@ -1,13 +1,8 @@
-'use client';
-
-import React from 'react';
-
-function SectionSelector({ data }: { data: any }) {
-  return (
-    <section>
-      <h1>{data.title}</h1>
-    </section>
-  );
+function SectionSelector({ section }: { section: any }) {
+  switch (section?.sectionType) {
+    default:
+      return null;
+  }
 }
 
 export default SectionSelector;

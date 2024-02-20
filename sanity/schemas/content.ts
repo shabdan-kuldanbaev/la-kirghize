@@ -6,6 +6,11 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'entryName',
+      title: 'Entry name',
+      type: 'string',
+    }),
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'localeString',
@@ -50,6 +55,33 @@ export default defineType({
       title: 'Words list',
       name: 'wordsList',
       type: 'localeWordsList',
+    }),
+    defineField({
+      title: 'Image list',
+      name: 'imageList',
+      type: 'array',
+      of: [
+        {
+          title: 'Image',
+          name: 'image',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'attribution',
+              type: 'string',
+              title: 'Attribution',
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
+      title: 'Content file',
+      name: 'contentFile',
+      type: 'file',
     }),
   ],
 });
