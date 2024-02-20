@@ -1,5 +1,8 @@
 'use client';
 
+import clsx from 'clsx';
+import styles from './styles.module.css';
+
 interface Props {
   title: string,
   description?: string,
@@ -30,8 +33,12 @@ function Hero({
           muted
           autoPlay
           loop
+          playsInline
           controls={false}
-          className="absolute top-0 z-[-1] object-cover object-center w-full h-full"
+          className={clsx(
+            'absolute top-0 z-[-1] object-cover object-center w-full h-full',
+            styles.video,
+          )}
         >
           <source src={contentFile} />
         </video>
