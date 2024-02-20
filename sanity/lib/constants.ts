@@ -8,5 +8,5 @@ export const supportedLanguages = [
 ];
 
 export const SECTION_TYPES = {
-  // hero: { title: 'Hero section', value: 'hero' },
+  hero: { title: 'Hero section', value: 'hero' },
 };
