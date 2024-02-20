@@ -24,19 +24,26 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
-import { ContactLink, NavLink } from '@/types/header';
 import ContactButton from './contactButton';
+import LangSwitcher from './langSwitcher';
+import { ContactLink, NavLink } from '@/types/header';
+import { Locale } from '@/i18n.config';
 
 function DropDownMenu(
   {
-    navLinks, contactLink,
+    navLinks,
+    contactLink,
+    lang,
   } : {
-    navLinks: NavLink[], contactLink: ContactLink },
+    navLinks: NavLink[],
+    contactLink: ContactLink
+    lang: Locale
+  },
 ) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="block md:hidden h-[48px] w-[48px]">
+    <div className="block lg:hidden h-[48px] w-[48px]">
       <Drawer open={open} onOpenChange={setOpen}>
         <DrawerTrigger>
           <Hamburger toggled={open} toggle={setOpen} />
@@ -105,11 +112,14 @@ function DropDownMenu(
                   </AccordionItem>
                 )))}
               </Accordion>
-              <ContactButton
-                onClick={() => setOpen(false)}
-                className="block mt-2 mx-auto"
-                {...contactLink}
-              />
+              <div className="flex justify-between mt-2 px-3">
+                <LangSwitcher lang={lang} />
+                <ContactButton
+                  onClick={() => setOpen(false)}
+                  className="block"
+                  {...contactLink}
+                />
+              </div>
             </ScrollArea>
           </DrawerHeader>
           <DrawerFooter className="items-center">
