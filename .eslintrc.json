@@ -34,6 +34,7 @@
         "@tanstack/query/stable-query-client": "error",
         "react/react-in-jsx-scope": "off",
         "no-return-assign": "off",
-        "@tanstack/query/exhaustive-deps": "off"
+        "@tanstack/query/exhaustive-deps": "off",
+        "jsx-a11y/media-has-caption": "off"
     }
 }
