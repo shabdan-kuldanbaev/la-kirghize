@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import { sectionTypes } from '$/lib/constants';
+import { SECTION_TYPES } from '$/lib/constants';
 
 export default defineType({
   name: 'section',
@@ -17,7 +17,7 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          ...sectionTypes,
+          ...Object.values(SECTION_TYPES),
         ],
         layout: 'radio',
       },

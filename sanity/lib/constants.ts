@@ -7,6 +7,6 @@ export const supportedLanguages = [
   { id: 'fr', title: 'French', isDefault: true },
 ];
 
-export const sectionTypes = [
-  { title: 'Hero section', value: 'hero' },
-];
+export const SECTION_TYPES = {
+  hero: { title: 'Hero section', value: 'hero' },
+};

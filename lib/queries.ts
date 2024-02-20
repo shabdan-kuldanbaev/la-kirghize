@@ -2,15 +2,16 @@ import { groq } from 'next-sanity';
 
 export const PAGE_GROQ = groq`*[_type == 'page' && slug.current == $slug][0] {
   title,
-  'metaTitle': coalesce(metaTitle[$lang], metaTitle.fr, 'Missing translation'),
-  'metaDescription': coalesce(metaDescription[$lang], metaDescription.fr, 'Missing translation'),
+  'metaTitle': coalesce(metaTitle[$lang], metaTitle.fr, null),
+  'metaDescription': coalesce(metaDescription[$lang], metaDescription.fr, null),
   'slug': slug.current,
   sections[]-> {
     ...,
-    'title': coalesce(title[$lang], title.fr, 'Missing translation'),
-    'description': coalesce(description[$lang], description.fr, 'Missing translation'),
-    'richText': coalesce(richText[$lang], richText.fr, 'Missing translation'),
-    'wordsList': coalesce(wordsList[$lang], wordsList.fr, 'Missing translation'),
+    'contentFile': contentFile.asset->url,
+    'title': coalesce(title[$lang], title.fr, null),
+    'description': coalesce(description[$lang], description.fr, null),
+    'richText': coalesce(richText[$lang], richText.fr, null),
+    'wordsList': coalesce(wordsList[$lang], wordsList.fr, null),
     contentList[]-> {
       ...,
       contentList[]-> {
@@ -29,8 +30,8 @@ export const PAGE_GROQ = groq`*[_type == 'page' && slug.current == $slug][0] {
 
 export const META_GROQ = groq`*[_type == 'page' && slug.current == $slug][0] {
   'slug': slug.current,
-  'metaTitle': coalesce(metaTitle[$lang], metaTitle.fr, 'Missing translation'),
-  'metaDescription': coalesce(metaDescription[$lang], metaDescription.fr, 'Missing translation'),
-  'keywords': coalesce(keywords[$lang], keywords.fr, 'Missing translation'),
+  'metaTitle': coalesce(metaTitle[$lang], metaTitle.fr, null),
+  'metaDescription': coalesce(metaDescription[$lang], metaDescription.fr, null),
+  'keywords': coalesce(keywords[$lang], keywords.fr, null),
   metaImage,
 }`;
