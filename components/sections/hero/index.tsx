@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+import TextGenerateEffect from '@/components/ui/text-generate-effect';
 import styles from './styles.module.css';
 
 interface Props {
@@ -19,12 +20,12 @@ function Hero({
       <div className="max-w-xl mx-auto px-4 grid place-content-center gap-2 h-full">
         {title && (
         <h1 className=" text-gray-95 font-bold text-3xl text-center sm:text-4xl">
-          {title}
+          <TextGenerateEffect words={title} />
         </h1>
         )}
         {description && (
         <p className="text-gray-95 text-lg text-center">
-          {description}
+          <TextGenerateEffect words={description} />
         </p>
         )}
       </div>
