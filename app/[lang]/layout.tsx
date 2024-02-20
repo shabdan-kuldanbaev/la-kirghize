@@ -50,9 +50,7 @@ export default async function RootLayout({
       <body className={cn('relative h-full flex flex-col', josefin.className)}>
         <TanstackProvider>
           <Header lang={lang} />
-          <main className="flex-auto">
-            {children}
-          </main>
+          {children}
           <Footer />
         </TanstackProvider>
       </body>

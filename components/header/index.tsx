@@ -11,7 +11,7 @@ export default async function Header({ lang }: { lang: string }) {
   const contactLink = getContactLink(lang);
 
   return (
-    <header className="sticky top-0 bg-gray-100/50 shadow-sm shadow-zinc-300">
+    <header className="fixed top-0 z-50 w-full bg-gray-100/40">
       <div className="container flex justify-between items-center px-4 py-2 lg:py-3 ">
         <Logo />
         <NavMenu navLinks={navLinks} />
