@@ -18,13 +18,13 @@ function HomePageContainer() {
     groq: PAGE_GROQ,
     params: { slug: 'accueil', lang },
   });
-
   return data && (
     <main className="flex-auto">
       <Hero
         title={data.metaTitle}
         description={data.metaDescription}
         contentFile={data.contentFile}
+        image={data.metaImage}
       />
       {data?.sections && data.sections.map((section: ISection) => (
         <SectionSelector section={section} />
