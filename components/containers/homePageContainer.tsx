@@ -1,13 +1,15 @@
 'use client';
 
 import { useParams } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import SectionSelector from '@/components/sectionSelector';
 import useDataQuery from '@/lib/hooks/useDataQuery';
 import { CONTENT_TYPES } from '@/lib/helpers';
 import { PAGE_GROQ } from '@/lib/queries';
 import { Locale } from '@/i18n.config';
 import { ISection } from '@/types/types';
-import Hero from '../sections/hero';
+
+const Hero = dynamic(() => import('@/components/sections/hero'));
 
 function HomePageContainer() {
   const { lang }: { lang: Locale } = useParams();
