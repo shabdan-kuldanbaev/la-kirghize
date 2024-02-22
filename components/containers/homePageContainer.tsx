@@ -12,7 +12,7 @@ import { ISection } from '@/types/types';
 function HomePageContainer() {
   const { lang }: { lang: Locale } = useParams();
   const { data } = useDataQuery({
-    queryKey: CONTENT_TYPES.page,
+    queryKey: [CONTENT_TYPES.page],
     groq: PAGE_GROQ,
     params: { slug: 'accueil', lang },
   });

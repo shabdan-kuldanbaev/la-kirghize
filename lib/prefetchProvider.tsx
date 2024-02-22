@@ -9,7 +9,7 @@ import {
 import QuerySanityFn from '@/lib/api';
 
 interface Props {
-  queryKey: string,
+  queryKey: string[],
   groq: string,
   params: { [key:string]: string },
   children: ReactNode
@@ -23,7 +23,7 @@ async function PrefetchProvider({
 } : Props) {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
-    queryKey: [queryKey, ...Object.values(params)],
+    queryKey: [...queryKey],
     queryFn: () => QuerySanityFn(groq, params),
   });
 
