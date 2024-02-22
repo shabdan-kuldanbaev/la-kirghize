@@ -1,10 +1,8 @@
-import dynamic from 'next/dynamic';
+import HomePageContainer from '@/components/containers/homePageContainer';
 import PrefetchProvider from '@/lib/prefetchProvider';
 import { Locale } from '@/i18n.config';
 import { PAGE_GROQ } from '@/lib/queries';
 import { CONTENT_TYPES } from '@/lib/helpers';
-
-const HomePageContainer = dynamic(() => import('@/components/containers/homePageContainer'));
 
 export default async function Home(
   { params: { lang } }:
