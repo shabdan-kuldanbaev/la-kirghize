@@ -8,6 +8,7 @@ const imageBuilder = createImageUrlBuilder({
   dataset: dataset || '',
 });
 
-const urlForImage = (source: Image) => imageBuilder?.image(source).auto('format').fit('max').url();
+const urlForImage = (source: Image) => imageBuilder?.image(source).auto('format').fit('max').format('webp')
+  .url();
 
 export default urlForImage;
