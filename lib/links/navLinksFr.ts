@@ -2,33 +2,12 @@ import { NavLink } from '@/types/header';
 
 const links: NavLink[] = [
   {
-    title: 'Mes tours',
-    path: '/tours',
+    title: 'Mes circuits',
+    path: '/circuits',
     items: [
       {
         title: 'Example 1',
-        path: '/path',
-        image: '',
-        description:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
-      },
-      {
-        title: 'Example 2',
-        path: '/path',
-        image: '',
-        description:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
-      },
-      {
-        title: 'Example 3',
-        path: '/path',
-        image: '',
-        description:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
-      },
-      {
-        title: 'Example 4',
-        path: '/path',
+        path: '/circuits/item1',
         image: '',
         description:
           'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
@@ -36,46 +15,11 @@ const links: NavLink[] = [
     ],
   },
   {
-    title: 'Qui moi',
-    path: '/que-moi',
+    title: 'Qui suis je ?',
+    path: '/que-suis-je',
     items: [
       {
         title: 'Example 1',
-        path: '/path',
-        image: '',
-        description:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
-      },
-      {
-        title: 'Example 2',
-        path: '/path',
-        image: '',
-        description:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
-      },
-      {
-        title: 'Example 3',
-        path: '/path',
-        image: '',
-        description:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
-      },
-      {
-        title: 'Example 4',
-        path: '/path',
-        image: '',
-        description:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
-      },
-      {
-        title: 'Example 5',
-        path: '/path',
-        image: '',
-        description:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
-      },
-      {
-        title: 'Example 6',
         path: '/path',
         image: '',
         description:
@@ -85,7 +29,7 @@ const links: NavLink[] = [
   },
   {
     title: 'Blog',
-    path: '/mon-blog',
+    path: '/blog',
     items: [
       {
         title: 'Example 1',
@@ -94,46 +38,11 @@ const links: NavLink[] = [
         description:
           'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
       },
-      {
-        title: 'Example 2',
-        path: '/path',
-        image: '',
-        description:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
-      },
-      {
-        title: 'Example 3',
-        path: '/path',
-        image: '',
-        description:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
-      },
-      {
-        title: 'Example 4',
-        path: '/path',
-        image: '',
-        description:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
-      },
-      {
-        title: 'Example 5',
-        path: '/path',
-        image: '',
-        description:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
-      },
-      {
-        title: 'Example 6',
-        path: '/path',
-        image: '',
-        description:
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
-      },
     ],
   },
   {
-    title: 'Kirgizistan',
-    path: '/kirgizistan',
+    title: 'Kirghizstan',
+    path: '/kirghizstan',
   },
 ];
 
