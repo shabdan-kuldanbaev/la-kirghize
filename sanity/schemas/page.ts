@@ -57,11 +57,6 @@ export default defineType({
       ],
     }),
     defineField({
-      title: 'Content file',
-      name: 'contentFile',
-      type: 'file',
-    }),
-    defineField({
       title: 'Sections',
       name: 'sections',
       type: 'array',

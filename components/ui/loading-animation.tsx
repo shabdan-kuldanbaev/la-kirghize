@@ -2,14 +2,16 @@
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Lottie from 'lottie-react';
-import animation from '@/public/animations/loadingAnimation.json';
+import planetAnimation from '@/public/animations/planetAnimation.json';
 
 export default function LoadingAnimation() {
   return (
-    <Lottie
-      loop
-      animationData={animation}
-      className="w-80 aspect-square"
-    />
+    <div className="absolute top-0 bottom-0 left-0 right-0 grid place-content-center bg-white">
+      <Lottie
+        loop
+        animationData={planetAnimation}
+        className="w-80 aspect-square"
+      />
+    </div>
   );
 }

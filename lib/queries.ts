@@ -1,12 +1,7 @@
 import { groq } from 'next-sanity';
 
 export const PAGE_GROQ = groq`*[_type == 'page' && slug.current == $slug][0] {
-  title,
-  metaImage,
-  'metaTitle': coalesce(metaTitle[$lang], metaTitle.fr, null),
-  'metaDescription': coalesce(metaDescription[$lang], metaDescription.fr, null),
   'slug': slug.current,
-  'contentFile': contentFile.asset->url,
   sections[]-> {
     ...,
     'contentFile': contentFile.asset->url,
