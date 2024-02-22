@@ -1,6 +1,7 @@
 import cn from 'clsx';
 import type { Metadata } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import TanstackProvider from '@/lib/tanstackProvider';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
@@ -56,6 +57,7 @@ export default async function RootLayout({
           <main className="flex-auto">
             {children}
             <SpeedInsights />
+            <Analytics />
           </main>
           <Footer />
         </TanstackProvider>
