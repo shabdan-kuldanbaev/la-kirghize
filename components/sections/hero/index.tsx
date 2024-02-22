@@ -9,19 +9,19 @@ interface Props {
   title: string,
   description?: string,
   contentFile?: string,
-  image?: any
+  imageList?: any[]
 }
 
 function Hero({
   title,
   description,
   contentFile,
-  image,
+  imageList,
 }: Props) {
   return (
     <div
       className="relative h-[100vh] bg-cover bg-no-repeat bg-center"
-      style={{ backgroundImage: `url('${image && urlForImage(image)}')` }}
+      style={{ backgroundImage: `url('${imageList && urlForImage(imageList[0])}')` }}
     >
       {contentFile && (
         <video

@@ -65,7 +65,7 @@ function DropDownMenu(
                     <AccordionContent>
                       <Carousel
                         opts={{ loop: true }}
-                        className="flex flex-row justify-between items-center w-full max-w-[100vw] mx-auto"
+                        className="flex flex-row justify-center items-center w-full max-w-[100vw] mx-auto"
                       >
                         <CarouselContent className="flex-shrink-0 flex-grow-0">
                           {items.map((item) => (

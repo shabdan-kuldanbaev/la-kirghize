@@ -10,7 +10,7 @@ export default async function Home(
 ) {
   return (
     <PrefetchProvider
-      queryKey={CONTENT_TYPES.page}
+      queryKey={[CONTENT_TYPES.page]}
       groq={PAGE_GROQ}
       params={{ slug: 'accueil', lang }}
     >
