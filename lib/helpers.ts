@@ -5,6 +5,7 @@ import appleTouchIcon from '@/public/apple-touch-icon.png';
 import android192 from '@/public/android-chrome-192x192.png';
 import android512 from '@/public/android-chrome-512x512.png';
 
+// eslint-disable-next-line import/prefer-default-export
 export const ICONS = {
   icon: [
     { url: favicon.src },
@@ -14,8 +15,4 @@ export const ICONS = {
     { url: android512.src, sizes: '512x512' },
   ],
   apple: appleTouchIcon.src,
-};
-
-export const CONTENT_TYPES = {
-  page: 'page',
 };

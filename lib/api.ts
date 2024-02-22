@@ -1,6 +1,6 @@
 import client from '@/sanity/lib/client';
 
-const QuerySanityFn = async (
+const DataFetchFn = async (
   groq: string,
   params: { [key: string]: string },
 ) => {
@@ -17,4 +17,4 @@ const QuerySanityFn = async (
   }
 };
 
-export default QuerySanityFn;
+export default DataFetchFn;

@@ -2,15 +2,16 @@ import cn from 'clsx';
 import type { Metadata } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import TanstackProvider from '@/lib/tanstackProvider';
+
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+
 import { Locale, i18n } from '@/i18n.config';
 import { josefin } from '@/lib/fonts';
-import client from '@/sanity/lib/client';
 import urlForImage from '@/sanity/lib/image';
 import { META_GROQ } from '@/lib/queries';
 import { ICONS } from '@/lib/helpers';
+import DataFetchFn from '@/lib/api';
 import './globals.css';
 
 type Props = {
@@ -20,7 +21,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata | null> {
   const { lang } = params;
 
-  const page = await client.fetch(META_GROQ, { slug: 'accueil', lang }, { cache: 'no-cache' });
+  const page = await DataFetchFn(META_GROQ, { slug: 'accueil', lang });
 
   if (!page) return null;
 
@@ -52,15 +53,13 @@ export default async function RootLayout({
   return (
     <html lang={lang} className="h-full">
       <body className={cn('relative h-full flex flex-col', josefin.className)}>
-        <TanstackProvider>
-          <Header lang={lang} />
-          <main className="flex-auto">
-            {children}
-            <SpeedInsights />
-            <Analytics />
-          </main>
-          <Footer />
-        </TanstackProvider>
+        <Header lang={lang} />
+        <main className="flex-auto">
+          {children}
+          <SpeedInsights />
+          <Analytics />
+        </main>
+        <Footer />
       </body>
     </html>
   );
