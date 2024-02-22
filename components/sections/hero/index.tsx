@@ -21,7 +21,7 @@ function Hero({
   return (
     <div
       className="relative h-[100vh] bg-cover bg-no-repeat bg-center"
-      style={{ backgroundImage: `url('${imageList && urlForImage(imageList[0])}')` }}
+      style={{ backgroundImage: `url('${imageList?.[0].asset && urlForImage(imageList?.[0])}')` }}
     >
       {contentFile && (
         <video

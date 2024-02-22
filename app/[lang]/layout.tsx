@@ -18,11 +18,13 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata | null> {
   const { lang } = params;
+
   const page = await client.fetch(META_GROQ, { slug: 'accueil', lang }, { cache: 'no-cache' });
 
   if (!page) return null;
 
-  const metaImage = urlForImage(page.metaImage);
+  const metaImage = page?.metaImage.asset && urlForImage(page.metaImage);
+
   return {
     metadataBase: new URL('https://la-kirghize.com'),
     title: page.metaTitle,
