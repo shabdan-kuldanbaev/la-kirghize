@@ -10,7 +10,7 @@ export default function LoadingAnimation() {
       <Lottie
         loop
         animationData={planetAnimation}
-        className="w-80 aspect-square"
+        className="w-20 aspect-square lg:w-40"
       />
     </div>
   );

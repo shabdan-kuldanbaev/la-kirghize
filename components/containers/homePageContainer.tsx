@@ -8,22 +8,23 @@ import { PAGE_GROQ } from '@/lib/queries';
 import { Locale } from '@/i18n.config';
 
 import { ISection } from '@/types/types';
+import LoadingAnimation from '@/components/ui/loading-animation';
 
 function HomePageContainer() {
   const { lang }: { lang: Locale } = useParams();
-  const { data } = useDataQuery({
+  const { data, isLoading } = useDataQuery({
     queryKey: [CONTENT_TYPES.page],
     groq: PAGE_GROQ,
     params: { slug: 'accueil', lang },
   });
 
-  return data && (
-    <main className="flex-auto">
-      {data?.sections && data.sections.map((section: ISection) => (
-        <RenderSection key={section.sectionType} section={section} />
-      ))}
-    </main>
-  );
+  if (isLoading) {
+    return <LoadingAnimation />;
+  }
+
+  return data && data.sections.map((section: ISection) => (
+    <RenderSection key={section.sectionType} section={section} />
+  ));
 }
 
 export default HomePageContainer;
