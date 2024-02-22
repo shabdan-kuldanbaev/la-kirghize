@@ -1,16 +1,17 @@
 'use client';
 
-// eslint-disable-next-line import/no-extraneous-dependencies
-import Lottie from 'lottie-react';
-import planetAnimation from '@/public/animations/planetAnimation.json';
+import Image from 'next/image';
+import logoSvg from '@/public/logo.svg';
 
 export default function LoadingAnimation() {
   return (
     <div className="absolute top-0 bottom-0 left-0 right-0 grid place-content-center bg-white">
-      <Lottie
-        loop
-        animationData={planetAnimation}
-        className="w-20 aspect-square lg:w-40"
+      <Image
+        src={logoSvg.src}
+        alt="La Kirghize"
+        width={72}
+        height={72}
+        className="animate-pulse"
       />
     </div>
   );
