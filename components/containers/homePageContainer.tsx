@@ -1,14 +1,13 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import dynamic from 'next/dynamic';
+import RenderSection from '@/components/renderSection';
 import useDataQuery from '@/lib/hooks/useDataQuery';
 import { CONTENT_TYPES } from '@/lib/helpers';
 import { PAGE_GROQ } from '@/lib/queries';
 import { Locale } from '@/i18n.config';
-import { ISection } from '@/types/types';
 
-const SectionSelector = dynamic(() => import('@/components/sectionSelector'));
+import { ISection } from '@/types/types';
 
 function HomePageContainer() {
   const { lang }: { lang: Locale } = useParams();
@@ -21,7 +20,7 @@ function HomePageContainer() {
   return data && (
     <main className="flex-auto">
       {data?.sections && data.sections.map((section: ISection) => (
-        <SectionSelector key={section.sectionType} section={section} />
+        <RenderSection key={section.sectionType} section={section} />
       ))}
     </main>
   );
