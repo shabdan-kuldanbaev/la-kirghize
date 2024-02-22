@@ -18,12 +18,10 @@ function Hero({
   contentFile,
   image,
 }: Props) {
-  const backgroundUrl = urlForImage(image);
-
   return (
     <div
       className="relative h-[100vh] bg-cover bg-no-repeat bg-center"
-      style={{ backgroundImage: `url('${backgroundUrl}')` }}
+      style={{ backgroundImage: `url('${image && urlForImage(image)}')` }}
     >
       {contentFile && (
         <video

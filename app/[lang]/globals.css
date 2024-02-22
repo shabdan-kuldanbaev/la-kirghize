@@ -59,6 +59,11 @@
   }
 }
 
+html, 
+body {
+  scroll-behavior: smooth;
+}
+
 main {
   background-image: url("../../lib/svgs/background.svg");
 }

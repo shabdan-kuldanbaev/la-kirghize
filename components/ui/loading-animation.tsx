@@ -6,7 +6,7 @@ import planetAnimation from '@/public/animations/planetAnimation.json';
 
 export default function LoadingAnimation() {
   return (
-    <div className="fixed top-0 w-screen h-screen grid place-content-center bg-white">
+    <div className="absolute top-0 bottom-0 left-0 right-0 grid place-content-center bg-white">
       <Lottie
         loop
         animationData={planetAnimation}
