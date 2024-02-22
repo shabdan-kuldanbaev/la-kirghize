@@ -2,7 +2,7 @@ import cn from 'clsx';
 import type { Metadata } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import TanstackProvider from '@/lib/tanstackProvider';
+// import TanstackProvider from '@/lib/tanstackProvider';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Locale, i18n } from '@/i18n.config';
@@ -52,15 +52,15 @@ export default async function RootLayout({
   return (
     <html lang={lang} className="h-full">
       <body className={cn('relative h-full flex flex-col', josefin.className)}>
-        <TanstackProvider>
-          <Header lang={lang} />
-          <main className="flex-auto">
-            {children}
-            <SpeedInsights />
-            <Analytics />
-          </main>
-          <Footer />
-        </TanstackProvider>
+        {/* <TanstackProvider> */}
+        <Header lang={lang} />
+        <main className="flex-auto">
+          {children}
+          <SpeedInsights />
+          <Analytics />
+        </main>
+        <Footer />
+        {/* </TanstackProvider> */}
       </body>
     </html>
   );
