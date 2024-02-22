@@ -8,19 +8,14 @@ import { PAGE_GROQ } from '@/lib/queries';
 import { Locale } from '@/i18n.config';
 
 import { ISection } from '@/types/types';
-import LoadingAnimation from '@/components/ui/loading-animation';
 
 function HomePageContainer() {
   const { lang }: { lang: Locale } = useParams();
-  const { data: { sections }, isLoading } = useDataQuery({
+  const { data: { sections } } = useDataQuery({
     queryKey: [CONTENT_TYPES.page],
     groq: PAGE_GROQ,
     params: { slug: 'accueil', lang },
   });
-
-  if (isLoading) {
-    return <LoadingAnimation />;
-  }
 
   return sections && sections.map((section: ISection) => (
     <RenderSection key={section.sectionType} section={section} />
