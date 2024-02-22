@@ -12,7 +12,7 @@ import LoadingAnimation from '@/components/ui/loading-animation';
 
 function HomePageContainer() {
   const { lang }: { lang: Locale } = useParams();
-  const { data, isLoading } = useDataQuery({
+  const { data: { sections }, isLoading } = useDataQuery({
     queryKey: [CONTENT_TYPES.page],
     groq: PAGE_GROQ,
     params: { slug: 'accueil', lang },
@@ -22,7 +22,7 @@ function HomePageContainer() {
     return <LoadingAnimation />;
   }
 
-  return data && data.sections.map((section: ISection) => (
+  return sections && sections.map((section: ISection) => (
     <RenderSection key={section.sectionType} section={section} />
   ));
 }
