@@ -40,7 +40,7 @@ function Hero({
       )}
       <div className="absolute top-0 left-0 right-0 bottom-0 grid place-content-center gap-2 px-4 h-full">
         {title && (
-        <h1 className="max-w-xl text-gray-95 font-bold text-3xl text-center sm:text-4xl">
+        <h1 className="max-w-xl text-white font-bold text-3xl text-center md:text-5xl">
           <TextGenerateEffect words={title} />
         </h1>
         )}

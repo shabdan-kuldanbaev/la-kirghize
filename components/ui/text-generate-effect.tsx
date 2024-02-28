@@ -33,7 +33,7 @@ export default function TextGenerateEffect({
         <motion.span
           // eslint-disable-next-line react/no-array-index-key
           key={word + idx}
-          className="dark:text-white text-black opacity-0"
+          className="opacity-0"
         >
           {word}
           {' '}
