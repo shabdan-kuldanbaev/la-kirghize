@@ -1,4 +1,4 @@
-import { ICONS } from '@/lib/helpers';
+import { ICONS } from '@/lib/metaIcons';
 
 export const metadata = {
   title: 'La Kirghize',
