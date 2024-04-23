@@ -1,20 +1,25 @@
+import { cache } from 'react';
 import client from '@/sanity/lib/client';
+import { DataFetch } from '@/types/types';
 
-const DataFetchFn = async (
+const DataFetchFn = cache(async (
   groq: string,
-  params: { [key: string]: string },
-) => {
+  params: {
+    [key: string]: string | boolean
+  },
+): Promise<DataFetch | null> => {
   try {
-    const data = await client.fetch(
+    return await client.fetch(
       groq,
       params,
-      { cache: 'no-cache' },
+      {
+        cache: 'force-cache',
+        next: { revalidate: 600 },
+      },
     );
-
-    return data;
   } catch {
     return null;
   }
-};
+});
 
 export default DataFetchFn;
