@@ -1,7 +1,7 @@
 import 'server-only';
 
 import { contactEn, contactFr } from './links';
-import { ContactLink, NavLink } from '@/types/header';
+import { ContactLink, NavLink } from '@/types/types';
 
 const navigationLinks: { [key: string]: () => Promise<(NavLink)[]> } = {
   en: () => import('./navLinksEn').then((module) => module.default),
