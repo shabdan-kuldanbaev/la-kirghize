@@ -1,6 +1,4 @@
-export const schemaTypes = [
-  'page',
-];
+export const schemaTypes = ['page'];
 
 export const supportedLanguages = [
   { id: 'fr', title: 'French', isDefault: true },

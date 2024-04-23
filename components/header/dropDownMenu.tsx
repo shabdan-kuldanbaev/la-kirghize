@@ -26,7 +26,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
 import ContactButton from './contactButton';
 import LangSwitcher from './langSwitcher';
-import { ContactLink, NavLink } from '@/types/header';
+import { ContactLink, NavLink } from '@/types/types';
 import { Locale } from '@/i18n.config';
 
 function DropDownMenu(

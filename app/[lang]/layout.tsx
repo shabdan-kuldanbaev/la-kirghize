@@ -6,12 +6,12 @@ import { Analytics } from '@vercel/analytics/react';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 
+import urlForImage from '@/sanity/lib/image';
+import DataFetchFn from '@/lib/api';
 import { Locale, i18n } from '@/i18n.config';
 import { josefin } from '@/lib/fonts';
-import urlForImage from '@/sanity/lib/image';
 import { META_GROQ } from '@/lib/queries';
-import { ICONS } from '@/lib/helpers';
-import DataFetchFn from '@/lib/api';
+import { ICONS } from '@/lib/metaIcons';
 import './globals.css';
 
 type Props = {
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata | nu
 
   if (!page) return null;
 
-  const metaImage = page?.metaImage.asset && urlForImage(page.metaImage);
+  const metaImage = page.metaImage && page.metaImage.asset ? urlForImage(page.metaImage) : '';
 
   return {
     metadataBase: new URL('https://la-kirghize.com'),

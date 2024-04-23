@@ -11,7 +11,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import ListItem from './listItem';
-import { NavLink } from '@/types/header';
+import { NavLink } from '@/types/types';
 
 function NavMenu({ navLinks }: { navLinks: NavLink[] }) {
   return (

@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 import RenderSection from '@/components/renderSection';
 
 import { Locale } from '@/i18n.config';
@@ -11,7 +13,11 @@ export default async function Home(
 ) {
   const data = await DataFetchFn(PAGE_GROQ, { slug: 'accueil', lang });
 
-  return data.sections && data.sections.map((section: ISection) => (
-    <RenderSection key={section.sectionType} section={section} />
+  if (!data) {
+    notFound();
+  }
+
+  return data && data.sections.map((section: ISection) => (
+    <RenderSection key={section._id} section={section} />
   ));
 }

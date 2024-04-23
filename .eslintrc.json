@@ -30,6 +30,7 @@
         "no-param-reassign": "off",
         "react/react-in-jsx-scope": "off",
         "no-return-assign": "off",
-        "jsx-a11y/media-has-caption": "off"
+        "jsx-a11y/media-has-caption": "off",
+        "no-underscore-dangle": "off"
     }
 }

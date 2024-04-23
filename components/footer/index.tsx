@@ -1,11 +1,57 @@
-'use client';
+import Link from 'next/link';
+import footerLinks from '@/lib/links/footerLinks';
+import Logo from '@/components/header/logo';
 
-import React from 'react';
-
-function Footer(): React.JSX.Element {
+function Footer() {
   return (
-    <footer className="bg-zinc-800 px-4 py-8">
-      <div className="text-zinc-50">Footer</div>
+    <footer className="bg-zinc-800">
+      <div className="container">
+        <div className="flex flex-col md:flex-row items-start justify-between py-20 md:py-40 gap-y-6">
+          <Logo theme="light" />
+          <div className="flex flex-row flex-wrap gap-10">
+            {footerLinks.map(({
+              title,
+              path,
+              items,
+            }) => (
+              items
+                ? (
+                  <div key={title} className="flex flex-col">
+                    {path
+                      ? (
+                        <Link
+                          className="text-white text-lg"
+                          href={path}
+                        >
+                          {title}
+                        </Link>
+                      )
+                      : <h4 className="text-white">{title}</h4>}
+                    {items.map((item) => (
+                      <Link
+                        key={item.title}
+                        href={item.path}
+                        className="text-white opacity-60"
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
+                  </div>
+                )
+                : (
+                  <Link
+                    key={title}
+                    className="text-white"
+                    href={path}
+                  >
+                    {title}
+                  </Link>
+                )
+            ))}
+          </div>
+        </div>
+        <p className="text-white opacity-60">© 2024 La Kirghize. All rights reserved.</p>
+      </div>
     </footer>
   );
 }

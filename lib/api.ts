@@ -13,8 +13,7 @@ const DataFetchFn = cache(async (
       groq,
       params,
       {
-        cache: 'force-cache',
-        next: { revalidate: 600 },
+        next: { revalidate: 1000 },
       },
     );
   } catch {
