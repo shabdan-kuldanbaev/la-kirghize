@@ -5,6 +5,7 @@ import TextBlock from '@/components/text';
 import { ISection } from '@/types/types';
 
 function TabsSection({ contentList }: ISection) {
+  console.log(contentList);
   const tabs: Array<Tab> = (contentList || []).map((tab) => ({
     title: tab.title,
     value: tab._id,
