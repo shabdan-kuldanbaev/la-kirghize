@@ -1,4 +1,5 @@
 import { PortableText, PortableTextComponents } from '@portabletext/react';
+import { TypedObject } from 'sanity';
 
 const components:PortableTextComponents = {
   block: {
@@ -8,7 +9,7 @@ const components:PortableTextComponents = {
   },
 };
 
-function TextBlock({ value }: { value: any }) {
+function TextBlock({ value }: { value: TypedObject | TypedObject[] }) {
   return (
     <PortableText value={value} components={components} />
   );

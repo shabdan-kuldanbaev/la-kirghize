@@ -1,3 +1,5 @@
+import { TypedObject } from 'sanity';
+
 export interface IPage {
   slug: string;
   sections: ISection[];
@@ -6,11 +8,13 @@ export interface IPage {
 
 export interface ISection {
   _id: string;
-  contentList: any
+  contentList: IContent[] | null;
 }
 
 export interface IContent {
-
+  _id: string;
+  title: string;
+  text: TypedObject | TypedObject[];
 }
 
 export interface IPageMetadata {
