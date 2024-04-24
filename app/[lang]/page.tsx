@@ -4,14 +4,14 @@ import RenderSection from '@/components/renderSection';
 
 import { Locale } from '@/i18n.config';
 import { PAGE_GROQ } from '@/lib/queries';
-import { ISection } from '@/types/types';
-import DataFetchFn from '@/lib/api';
+import { IPage, ISection } from '@/types/types';
+import { sanityFetch } from '@/sanity/lib/fetch';
 
 export default async function Home(
   { params: { lang } }:
   { params: { lang: Locale } },
 ) {
-  const data = await DataFetchFn(PAGE_GROQ, { slug: 'accueil', lang });
+  const data: IPage = await sanityFetch({ query: PAGE_GROQ, params: { slug: 'accueil', lang } });
 
   if (!data) {
     notFound();

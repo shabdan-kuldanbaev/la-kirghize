@@ -15,7 +15,7 @@ import { NavLink } from '@/types/types';
 
 function NavMenu({ navLinks }: { navLinks: NavLink[] }) {
   return (
-    <NavigationMenu className="hidden lg:block bg-gray-100/50">
+    <NavigationMenu className="hidden lg:block">
       <NavigationMenuList>
         {navLinks.map(({ title, items, path }) => (items ? (
           <NavigationMenuItem key={path}>

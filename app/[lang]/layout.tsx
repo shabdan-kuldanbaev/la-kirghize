@@ -51,15 +51,15 @@ export default async function RootLayout({
   params:{ lang: Locale }
 }>) {
   return (
-    <html lang={lang} className="h-full">
-      <body className={cn('relative h-full flex flex-col', josefin.className)}>
+    <html lang={lang}>
+      <body className={cn('relative', josefin.className)}>
         <Header lang={lang} />
-        <main className="flex-auto">
+        <main className="h-screen snap-y snap-mandatory overflow-y-scroll">
           {children}
+          <Footer />
           <SpeedInsights />
           <Analytics />
         </main>
-        <Footer />
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import Logo from '@/components/header/logo';
 
 function Footer() {
   return (
-    <footer className="bg-zinc-800">
+    <footer className="bg-zinc-800 snap-start">
       <div className="container">
         <div className="flex flex-col md:flex-row items-start justify-between py-20 md:py-40 gap-y-6">
           <Logo theme="light" />

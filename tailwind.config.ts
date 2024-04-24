@@ -19,6 +19,10 @@ const config = {
     },
     extend: {
       colors: {
+        salad: '#f0ff3d',
+        dark: '#001713',
+        base: '#f2f2f2',
+        blured: 'rgba(25,25,25,.4)',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

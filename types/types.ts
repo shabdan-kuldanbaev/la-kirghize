@@ -5,6 +5,11 @@ export interface IPage {
 
 export interface ISection {
   _id: string;
+  contentList: any
+}
+
+export interface IContent {
+
 }
 
 export interface IPageMetadata {
