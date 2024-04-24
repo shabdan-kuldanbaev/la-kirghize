@@ -1,6 +1,7 @@
 export interface IPage {
   slug: string;
   sections: ISection[];
+  metaImage: any;
 }
 
 export interface ISection {

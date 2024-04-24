@@ -1,4 +1,7 @@
 .video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover ;
   pointer-events: none;
 }
 
@@ -6,5 +9,11 @@
 .video::-moz-media-controls,
 .video::-o-media-controls, 
 .video::-ms-media-controls {
-  display: none !important; 
+  display: none; 
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color:  rgb(0 0 0 / 30%);
 }
