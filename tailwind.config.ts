@@ -23,6 +23,8 @@ const config = {
         dark: '#001713',
         base: '#f2f2f2',
         blue: '#c0d8d7',
+        darkBlue: '#002921',
+        pastel: '#f2f7f7',
         blured: 'rgba(25,25,25,.4)',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

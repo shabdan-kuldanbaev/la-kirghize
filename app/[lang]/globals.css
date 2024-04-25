@@ -64,10 +64,6 @@ body {
   scroll-behavior: smooth;
 }
 
-main {
-  background-image: url("../../lib/svgs/background.svg");
-}
-
 .no-visible-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;

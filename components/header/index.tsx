@@ -1,5 +1,6 @@
 'use server';
 
+import ScrollWrapper from './scrollWrapper';
 import LangSwitcher from './langSwitcher';
 import ContactButton from './contactButton';
 import DropDownMenu from './dropDownMenu';
@@ -13,7 +14,7 @@ export default async function Header({ lang }: { lang: Locale }) {
   const contactLink = getContactLink(lang);
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-gray-100/40">
+    <ScrollWrapper>
       <div className="container flex justify-between items-center px-4 py-2 lg:py-3 ">
         <Logo />
         <NavMenu navLinks={navLinks} />
@@ -21,6 +22,6 @@ export default async function Header({ lang }: { lang: Locale }) {
         <ContactButton {...contactLink} className="hidden lg:block" />
         <DropDownMenu navLinks={navLinks} contactLink={contactLink} lang={lang} />
       </div>
-    </header>
+    </ScrollWrapper>
   );
 }

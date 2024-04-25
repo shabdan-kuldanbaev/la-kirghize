@@ -37,7 +37,7 @@ export function FadeInDiv({
           animate={{
             y: isActive(tab) ? [0, 40, 0] : 0,
           }}
-          className={cn('w-full h-full absolute top-0 left-0 rounded-2xl overflow-hidden overflow-y-auto no-visible-scrollbar', className)}
+          className={cn('w-full h-full absolute top-0 left-0', className)}
         >
           {tab.content}
         </motion.div>
@@ -76,7 +76,7 @@ export function Tabs({
     <>
       <div
         className={cn(
-          'flex flex-row items-center justify-start [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full bg-blured p-4 rounded-2xl backdrop-blur-sm',
+          'flex flex-row items-center justify-start [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full ',
           containerClassName,
         )}
       >
