@@ -1,14 +1,14 @@
 import 'server-only';
 
 import { contactEn, contactFr } from './links';
-import { ContactLink, NavLink } from '@/types/types';
+import { ContactLink, FooterLink, NavLink } from '@/types/types';
 
 const navigationLinks: { [key: string]: () => Promise<(NavLink)[]> } = {
   en: () => import('./navLinksEn').then((module) => module.default),
   fr: () => import('./navLinksFr').then((module) => module.default),
 };
 
-const footerLink: { [key: string]: () => Promise<(NavLink)[]> } = {
+const footerLink: { [key: string]: () => Promise<(FooterLink)[]> } = {
   en: () => import('./footerLinksEn').then((module) => module.default),
   fr: () => import('./footerLinksFr').then((module) => module.default),
 };

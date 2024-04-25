@@ -38,7 +38,13 @@ export type DataFetch = IPage & IPageMetadata;
 export interface NavLink {
   title: string,
   path: string,
-  items: LinkItem[]
+  items?: LinkItem[]
+}
+
+export interface FooterLink {
+  title: string,
+  path?: string,
+  items?: LinkItem[]
 }
 
 export interface LinkItem {
