@@ -14,21 +14,25 @@ export const PAGE_GROQ = groq`*[_type == 'page' && slug.current == $slug && isTo
       'title': coalesce(title[$lang], title.fr, null),
       'description': coalesce(description[$lang], description.fr, null),
       'text': coalesce(text[$lang], text.fr, null),
+      'wordsList': coalesce(wordsList[$lang], wordsList.fr, null),
       contentList[]-> {
         ...,
         'title': coalesce(title[$lang], title.fr, null),
         'description': coalesce(description[$lang], description.fr, null),
         'text': coalesce(text[$lang], text.fr, null),
+        'wordsList': coalesce(wordsList[$lang], wordsList.fr, null),
         contentList[]-> {
           ...,
           'title': coalesce(title[$lang], title.fr, null),
           'description': coalesce(description[$lang], description.fr, null),
           'text': coalesce(text[$lang], text.fr, null),
+          'wordsList': coalesce(wordsList[$lang], wordsList.fr, null),
           contentList[]-> {
             ...,
             'title': coalesce(title[$lang], title.fr, null),
             'description': coalesce(description[$lang], description.fr, null),
             'text': coalesce(text[$lang], text.fr, null),
+            'wordsList': coalesce(wordsList[$lang], wordsList.fr, null),
             contentList[]->
           }
         }

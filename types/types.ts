@@ -17,7 +17,11 @@ export interface ISection {
 export interface IContent {
   _id: string;
   title: string;
+  description: string;
   text: TypedObject | TypedObject[];
+  contentList: IContent[] | null;
+  wordsList: string[];
+  image?: any;
 }
 
 export interface IPageMetadata {
