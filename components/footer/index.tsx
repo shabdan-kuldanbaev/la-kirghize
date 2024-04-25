@@ -1,8 +1,13 @@
-import Link from 'next/link';
-import footerLinks from '@/lib/links/footerLinks';
-import Logo from '@/components/header/logo';
+'use server';
 
-function Footer() {
+import Link from 'next/link';
+import Logo from '@/components/header/logo';
+import { Locale } from '@/i18n.config';
+import { getFooterLinks } from '@/lib/links/dictionaries';
+
+async function Footer({ lang }: { lang: Locale }) {
+  const footerLinks = await getFooterLinks(lang);
+
   return (
     <footer className="bg-zinc-800 snap-start">
       <div className="container">

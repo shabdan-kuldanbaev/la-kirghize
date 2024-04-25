@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity';
 
-export const PAGE_GROQ = groq`*[_type == 'page' && slug.current == $slug][0] {
+export const PAGE_GROQ = groq`*[_type == 'page' && slug.current == $slug && isTour == $isTour][0] {
   'slug': slug.current,
   sections[]-> {
     ...,
@@ -37,7 +37,7 @@ export const PAGE_GROQ = groq`*[_type == 'page' && slug.current == $slug][0] {
   }
 }`;
 
-export const META_GROQ = groq`*[_type == 'page' && slug.current == $slug][0] {
+export const META_GROQ = groq`*[_type == 'page' && slug.current == $slug && isTour == $isTour][0] {
   'slug': slug.current,
   'metaTitle': coalesce(metaTitle[$lang], metaTitle.fr, null),
   'metaDescription': coalesce(metaDescription[$lang], metaDescription.fr, null),

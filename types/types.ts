@@ -4,6 +4,9 @@ export interface IPage {
   slug: string;
   sections: ISection[];
   metaImage: any;
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
 }
 
 export interface ISection {
@@ -28,8 +31,8 @@ export interface IPageMetadata {
 export type DataFetch = IPage & IPageMetadata;
 
 export interface NavLink {
-  title: string,
-  path: string,
+  title?: string,
+  path?: string,
   items?: LinkItem[]
 }
 

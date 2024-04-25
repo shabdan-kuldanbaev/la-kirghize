@@ -3,11 +3,11 @@ import { NavLink } from '@/types/types';
 const links: NavLink[] = [
   {
     title: 'Mes circuits',
-    path: '/circuits',
+    path: '/fr/circuits',
     items: [
       {
         title: 'Example 1',
-        path: '/circuits/item1',
+        path: '/fr/circuits/item1',
         image: '',
         description:
           'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
@@ -16,7 +16,7 @@ const links: NavLink[] = [
   },
   {
     title: 'Qui suis je ?',
-    path: '/que-suis-je',
+    path: '/fr/que-suis-je',
     items: [
       {
         title: 'Example 1',
@@ -29,7 +29,7 @@ const links: NavLink[] = [
   },
   {
     title: 'Blog',
-    path: '/blog',
+    path: '/fr/blog',
     items: [
       {
         title: 'Example 1',
@@ -42,7 +42,7 @@ const links: NavLink[] = [
   },
   {
     title: 'Kirghizstan',
-    path: '/kirghizstan',
+    path: '/fr/kirghizstan',
   },
 ];
 

@@ -1,11 +1,11 @@
 export default [
   {
     title: 'My tours',
-    path: '/circuits',
+    path: '/fr/circuits',
     items: [
       {
         title: 'Example 1',
-        path: '/circuits/item1',
+        path: '/fr/circuits/item1',
         image: '',
         description:
           'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fugiat explicabo vel iusto dicta quam voluptates accusantium perferendis. Molestiae, a?',
@@ -14,7 +14,7 @@ export default [
   },
   {
     title: 'About me',
-    path: '/que-suis-je',
+    path: '/fr/que-suis-je',
     items: [
       {
         title: 'Example 1',
@@ -27,7 +27,7 @@ export default [
   },
   {
     title: 'Blog',
-    path: '/blog',
+    path: '/fr/blog',
     items: [
       {
         title: 'Example 1',
@@ -40,6 +40,6 @@ export default [
   },
   {
     title: 'Kyrgyzstan',
-    path: '/kirghizstan',
+    path: '/fr/kirghizstan',
   },
 ];

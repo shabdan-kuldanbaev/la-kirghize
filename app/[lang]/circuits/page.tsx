@@ -1,25 +1,24 @@
+import React, { Suspense } from 'react';
 import { notFound } from 'next/navigation';
-import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
 import { Metadata } from 'next';
 import LoadingAnimation from '@/components/ui/loading-animation';
-import { Locale } from '@/i18n.config';
+import RenderSection from '@/components/renderSection';
 import { META_GROQ, PAGE_GROQ } from '@/lib/queries';
-import { IPage, ISection } from '@/types/types';
 import { sanityFetch } from '@/sanity/lib/fetch';
+import { IPage, ISection } from '@/types/types';
 import urlForImage from '@/sanity/lib/image';
 import { ICONS } from '@/lib/metaIcons';
 
 type Props = {
-  params: { lang: string }
+  params: {
+    lang: string,
+  }
 };
-
-const RenderSection = dynamic(() => import('@/components/renderSection'));
 
 export async function generateMetadata({ params }: Props): Promise<Metadata | null> {
   const { lang } = params;
 
-  const page: any = await sanityFetch({
+  const page: IPage = await sanityFetch({
     query: META_GROQ,
     params: {
       lang,
@@ -30,10 +29,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata | nu
 
   if (!page) notFound();
 
-  const metaImage = page.metaImage && page.metaImage.asset ? urlForImage(page.metaImage) : '';
+  const metaImage = page.metaImage && urlForImage(page.metaImage);
 
   return {
-    metadataBase: new URL('https://la-kirghize.com'),
+    metadataBase: new URL(`https://la-kirghize.com/${lang}/tours`),
     title: page.metaTitle,
     description: page.metaDescription,
     keywords: page.keywords,
@@ -44,10 +43,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata | nu
   };
 }
 
-export default async function Home(
-  { params: { lang } }:
-  { params: { lang: Locale } },
-) {
+async function ToursPage({
+  params: {
+    lang,
+  },
+}: Props) {
   const data: IPage = await sanityFetch({
     query: PAGE_GROQ,
     params: {
@@ -69,3 +69,5 @@ export default async function Home(
     </Suspense>
   );
 }
+
+export default ToursPage;
