@@ -105,7 +105,7 @@ export function Tabs({
               />
             )}
 
-            <span className="relative block text-dark">
+            <span className="relative block text-dark whitespace-nowrap">
               {tab.title}
             </span>
           </button>
