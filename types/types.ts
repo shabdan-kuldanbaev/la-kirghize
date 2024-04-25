@@ -12,6 +12,7 @@ export interface IPage {
 export interface ISection {
   _id: string;
   contentList: IContent[] | null;
+  title: string;
 }
 
 export interface IContent {

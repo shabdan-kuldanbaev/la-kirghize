@@ -22,6 +22,7 @@ const config = {
         salad: '#f0ff3d',
         dark: '#001713',
         base: '#f2f2f2',
+        blue: '#c0d8d7',
         blured: 'rgba(25,25,25,.4)',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
