@@ -16,7 +16,7 @@ async function Footer({ lang }: { lang: Locale }) {
           <div className="flex flex-row flex-wrap gap-10">
             {footerLinks.map(({
               title,
-              path,
+              path = '#',
               items,
             }) => (
               items
