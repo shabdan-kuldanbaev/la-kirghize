@@ -7,6 +7,7 @@ import {
 } from 'react';
 import mapboxgl, { FlyToOptions, LngLatLike } from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import cn from '@/lib/utils';
 
 export interface IPosition {
   center: LngLatLike;
@@ -45,6 +46,7 @@ function MapboxMap({
       container: node,
       style: mapStyle,
       attributionControl: false,
+      trackResize: true,
       ...initialPosition,
     });
 
@@ -73,7 +75,10 @@ function MapboxMap({
     }
   }, [flyToOptions]);
 
-  return <div ref={mapNode} className={className} />;
+  return (
+    <div ref={mapNode} className={cn('w-full, h-full', className)} />
+
+  );
 }
 
 export default MapboxMap;
