@@ -49,7 +49,7 @@ function MapboxMap({
 
     setMap(mapboxMap);
 
-    if (markers?.length === 0) {
+    if (markers?.length !== 0) {
       markers.forEach((position) => {
         const marker = new mapboxgl.Marker({
           color: '#000',
