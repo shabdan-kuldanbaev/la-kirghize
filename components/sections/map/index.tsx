@@ -21,6 +21,7 @@ export interface MapboxMapProps {
 }
 
 const accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
+const mapStyle = process.env.NEXT_PUBLIC_MAPBOX_MAP_STYLE;
 
 function MapboxMap({
   className,
@@ -42,7 +43,7 @@ function MapboxMap({
     const mapboxMap = new mapboxgl.Map({
       accessToken,
       container: node,
-      style: 'mapbox://styles/mapbox/outdoors-v12',
+      style: mapStyle,
       attributionControl: false,
       ...initialPosition,
     });
