@@ -86,7 +86,7 @@ function MapboxMap({
   }, [flyToOptions]);
 
   return (
-    <div ref={mapNode} className={cn('w-full, h-full', className)} />
+    <div ref={mapNode} className={cn('w-full h-full', className)} />
 
   );
 }
