@@ -8,22 +8,23 @@ import urlForImage from '@/sanity/lib/image';
 import { META_GROQ, PAGE_GROQ } from '@/lib/queries';
 import { ICONS } from '@/lib/metaIcons';
 import { IPage, ISection } from '@/types/types';
+import SlugScreen from '@/components/screens/tour';
 
 type Props = {
   params: {
     lang: string;
-    slug: string;
+    tour: string;
   };
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata | null> {
-  const { lang, slug } = params;
+  const { lang, tour } = params;
 
   const page: IPage = await sanityFetch({
     query: META_GROQ,
     params: {
       lang,
-      slug,
+      slug: tour,
       isTour: false,
     },
   });
@@ -45,13 +46,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata | nu
 }
 
 async function SlugPage({ params }: Props) {
-  const { lang, slug } = params;
+  const { lang, tour } = params;
 
   const data: IPage = await sanityFetch({
     query: PAGE_GROQ,
     params: {
       lang,
-      slug,
+      slug: tour,
       isTour: true,
     },
   });
@@ -60,9 +61,7 @@ async function SlugPage({ params }: Props) {
     notFound();
   }
 
-  return data && data.sections.map((section: ISection) => (
-    <RenderSection key={section._id} section={section} />
-  ));
+  return <SlugScreen data={data} />;
 }
 
 export default SlugPage;
