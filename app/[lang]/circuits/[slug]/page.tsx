@@ -1,9 +1,7 @@
-import React, { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
 import RenderSection from '@/components/renderSection';
-import LoadingAnimation from '@/components/ui/loading-animation';
 
 import { sanityFetch } from '@/sanity/lib/fetch';
 import urlForImage from '@/sanity/lib/image';
@@ -54,7 +52,7 @@ async function SlugPage({ params }: Props) {
     params: {
       lang,
       slug,
-      isTour: false,
+      isTour: true,
     },
   });
 
@@ -62,13 +60,9 @@ async function SlugPage({ params }: Props) {
     notFound();
   }
 
-  return (
-    <Suspense fallback={<LoadingAnimation />}>
-      {data && data.sections.map((section: ISection) => (
-        <RenderSection key={section._id} section={section} />
-      ))}
-    </Suspense>
-  );
+  return data && data.sections.map((section: ISection) => (
+    <RenderSection key={section._id} section={section} />
+  ));
 }
 
 export default SlugPage;
