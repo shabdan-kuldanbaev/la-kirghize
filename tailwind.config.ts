@@ -21,7 +21,7 @@ const config = {
       colors: {
         salad: '#f0ff3d',
         dark: '#001713',
-        base: '#f2f2f2',
+        'color-base': '#f2f2f2',
         blue: '#c0d8d7',
         darkBlue: '#002921',
         pastel: '#f2f7f7',

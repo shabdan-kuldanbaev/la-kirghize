@@ -1,5 +1,5 @@
 import { PortableTextProps } from '@portabletext/react';
-import { IPosition } from '@/components/sections/map';
+import { IPosition } from '@/components/map';
 
 export interface IPage {
   slug: string;
