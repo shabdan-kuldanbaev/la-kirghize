@@ -1,7 +1,12 @@
-import { PortableText, PortableTextComponents } from '@portabletext/react';
-import { TypedObject } from 'sanity';
+'use client';
 
-const components:PortableTextComponents = {
+import {
+  PortableText,
+  PortableTextComponents,
+  PortableTextProps,
+} from '@portabletext/react';
+
+const components: PortableTextComponents = {
   block: {
     normal: ({ children }): JSX.Element => (
       <p>{children}</p>
@@ -9,7 +14,7 @@ const components:PortableTextComponents = {
   },
 };
 
-function TextBlock({ value }: { value: TypedObject | TypedObject[] }) {
+function TextBlock({ value }: Pick<PortableTextProps, 'value'>) {
   return (
     <PortableText value={value} components={components} />
   );

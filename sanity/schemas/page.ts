@@ -9,7 +9,7 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Document title',
+      title: 'Page',
       type: 'string',
     }),
     defineField({

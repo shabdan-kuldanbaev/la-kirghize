@@ -7,7 +7,7 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'entryName',
+      name: 'title',
       title: 'Entry name',
       type: 'string',
     }),
@@ -16,15 +16,13 @@ export default defineType({
       title: 'Section type',
       type: 'string',
       options: {
-        list: [
-          ...Object.values(SECTION_TYPES),
-        ],
+        list: Object.values(SECTION_TYPES),
         layout: 'radio',
       },
     }),
     defineField({
-      name: 'title',
-      title: 'Title',
+      name: 'heading',
+      title: 'Heading',
       type: 'localeString',
     }),
     defineField({

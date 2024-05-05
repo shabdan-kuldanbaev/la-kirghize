@@ -1,4 +1,5 @@
-import { TypedObject } from 'sanity';
+import { PortableTextProps } from '@portabletext/react';
+import { IPosition } from '@/components/sections/map';
 
 export interface IPage {
   slug: string;
@@ -11,18 +12,23 @@ export interface IPage {
 
 export interface ISection {
   _id: string;
-  contentList: IContent[] | null;
-  title: string;
+  heading: string;
+  description: string;
+  contentFile: string;
+  sectionType: string;
+  contentList: IContent[];
 }
 
 export interface IContent {
   _id: string;
-  title: string;
+  heading: string;
   description: string;
-  text: TypedObject | TypedObject[];
-  contentList: IContent[] | null;
+  text: Pick<PortableTextProps, 'value'>
+  contentList: IContent[];
   wordsList: string[];
-  image?: any;
+  image: any;
+  position: IPosition;
+  icon: string;
 }
 
 export interface IPageMetadata {
