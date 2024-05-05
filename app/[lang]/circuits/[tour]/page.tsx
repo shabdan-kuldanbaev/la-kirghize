@@ -1,13 +1,11 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
-import RenderSection from '@/components/renderSection';
-
 import { sanityFetch } from '@/sanity/lib/fetch';
 import urlForImage from '@/sanity/lib/image';
 import { META_GROQ, PAGE_GROQ } from '@/lib/queries';
 import { ICONS } from '@/lib/metaIcons';
-import { IPage, ISection } from '@/types/types';
+import { IPage } from '@/types/types';
 import SlugScreen from '@/components/screens/tour';
 
 type Props = {
