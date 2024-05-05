@@ -73,3 +73,7 @@ body {
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
