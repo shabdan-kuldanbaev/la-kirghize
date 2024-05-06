@@ -1,14 +1,13 @@
 import { notFound } from 'next/navigation';
 import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
 import { Metadata } from 'next';
-import LoadingAnimation from '@/components/ui/loading-animation';
-import { Locale } from '@/i18n.config';
-import { META_GROQ, PAGE_GROQ } from '@/lib/queries';
-import { IPage, ISection } from '@/types/types';
+
 import { sanityFetch } from '@/sanity/lib/fetch';
 import urlForImage from '@/sanity/lib/image';
+import { META_GROQ, PAGE_GROQ } from '@/lib/queries';
+import { Locale } from '@/i18n.config';
 import { ICONS } from '@/lib/metaIcons';
+import { IPage, ISection } from '@/types/types';
 
 type Props = {
   params: { lang: string }
@@ -28,7 +27,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata | nu
     },
   });
 
-  if (!page) notFound();
+  if (!page) {
+    notFound();
+  }
 
   const metaImage = page.metaImage && page.metaImage.asset ? urlForImage(page.metaImage) : '';
 
@@ -61,11 +62,7 @@ export default async function Home(
     notFound();
   }
 
-  return (
-    <Suspense fallback={<LoadingAnimation />}>
-      {data && data.sections.map((section: ISection) => (
-        <RenderSection key={section._id} section={section} />
-      ))}
-    </Suspense>
-  );
+  return data && data.sections.map((section: ISection) => (
+    <RenderSection key={section._id} {...section} />
+  ));
 }
