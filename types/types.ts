@@ -1,6 +1,10 @@
 import { PortableTextProps } from '@portabletext/react';
 import { IPosition } from '@/components/map';
 
+export type ILinks = {
+  fr: NavLink[];
+  en: NavLink[];
+};
 export interface IPage {
   slug: string;
   sections: ISection[];

@@ -1,39 +1,38 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 
-import { Locale, i18n } from '@/i18n.config';
+import { i18n } from '@/i18n.config';
 import cn from '@/lib/utils';
 
 function LangSwitcher(
   {
-    lang,
     className,
   }:
   {
-    lang: Locale,
     className?: string,
   },
 ) {
+  const { lang } = useParams();
   const path = usePathname();
   const { locales } = i18n;
 
   return (
-    <div className={cn('flex items-center space-x-2', className)}>
+    <div className={cn('flex items-center gap-2', className)}>
       {locales.map((locale) => (
         <Link
           key={locale}
           href={path.replace(`/${lang}/`, `/${locale}/`)}
-          className={cn(
-            'px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90',
-            { 'pointer-events-none bg-primary/50': locale === lang },
-          )}
+          className={cn(`block
+          py-2 px-4 rounded-[8px] text-[#d3d3d3]
+          border-solid border-[1px] border-[#4e4e4e] text-sm font-light
+          hover:border-[#a7a7a7] transition-all duration-300
+        `, { 'border-[#a7a7a7]': lang === locale })}
         >
           {locale}
         </Link>
       ))}
-
     </div>
   );
 }

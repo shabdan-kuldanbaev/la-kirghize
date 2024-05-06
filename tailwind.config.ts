@@ -22,6 +22,8 @@ const config = {
         salad: '#f0ff3d',
         dark: '#001713',
         'color-base': '#f2f2f2',
+        'color-light-gray': '#E9E9E9',
+        wrapper: 'rgba(34,34,34, 0.8)',
         blue: '#c0d8d7',
         darkBlue: '#002921',
         pastel: '#f2f7f7',
@@ -59,6 +61,12 @@ const config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+      },
+      backgroundSize: {
+        'custom-1': '1px 8px',
+      },
+      backgroundImage: {
+        linear: 'linear-gradient(to bottom, #7a7a7a 0 10%, rgba(255, 255, 255, 0) 10%)',
       },
       borderRadius: {
         lg: 'var(--radius)',

@@ -15,10 +15,11 @@ import MapboxMap from '@/components/map';
 import ICONS from '@/lib/icons';
 import { IContent, ISection } from '@/types/types';
 
-type Props = Pick<ISection, 'heading' | 'contentList'>;
+type Props = Pick<ISection, '_id' | 'heading' | 'contentList'>;
 
 function StickyScrollMap(props: Props) {
   const {
+    _id,
     heading,
     contentList,
   } = props;
@@ -52,12 +53,12 @@ function StickyScrollMap(props: Props) {
   });
 
   return (
-    <section className="px-4">
+    <section id={_id} className="px-4 bg-color-light-gray">
       <div
         ref={ref}
         className={`
-        py-10
-        h-auto lg:h-[75vh]
+        py-14
+        h-auto lg:h-[100svh]
         m-auto
         max-w-6xl
         overflow-y-auto 
@@ -76,7 +77,6 @@ function StickyScrollMap(props: Props) {
         lg:px-4
         top-0
         z-10
-        bg-white
       `}
         >
           <h2 className="text-2xl font-bold mb-4 text-right">{heading}</h2>
@@ -90,7 +90,7 @@ function StickyScrollMap(props: Props) {
         <div className="block div relative items-start">
           <div className="max-w-4xl">
             {contentList?.map((content, index) => (
-              <div key={content.heading + index} className="pb-16">
+              <article key={content.heading + index} className="pb-16">
                 {content.heading && (
                   <h3 className="text-xl font-bold text-black">
                     {content.heading
@@ -131,7 +131,7 @@ function StickyScrollMap(props: Props) {
                     )}
                   </div>
                 ))}
-              </div>
+              </article>
             ))}
           </div>
         </div>

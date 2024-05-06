@@ -1,3 +1,10 @@
+import { ICONS } from '@/lib/metaIcons';
+
+export const metadata = {
+  title: 'La Kirghize',
+  icons: ICONS,
+};
+
 function NotFound() {
   return (
     <div className="pt-40 px-4">

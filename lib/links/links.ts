@@ -1,9 +1,10 @@
-export const contactFr = {
-  path: '/contactezNous',
-  title: 'Contactez nous',
-};
-
-export const contactEn = {
-  path: '/contactUs',
-  title: 'Contact us',
+export const contactLinks = {
+  en: {
+    path: '/contactUs',
+    title: 'Contact us',
+  },
+  fr: {
+    path: '/contactezNous',
+    title: 'Contactez nous',
+  },
 };

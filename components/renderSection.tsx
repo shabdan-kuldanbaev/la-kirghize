@@ -7,20 +7,20 @@ import { ISection } from '@/types/types';
 const Hero = dynamic(() => import('@/components/sections/hero'));
 const StickyScrollMap = dynamic(() => import('@/components/sections/sticky-scroll-map'));
 
-function RenderSection({ section }: { section: ISection }) {
-  const { sectionType } = section;
+function RenderSection(data: ISection) {
+  const { sectionType } = data;
 
   switch (sectionType) {
     case SECTION_TYPES.hero.value:
       return (
         <Suspense fallback={null}>
-          <Hero {...section} />
+          <Hero {...data} />
         </Suspense>
       );
     case SECTION_TYPES.sticky.value:
       return (
         <Suspense fallback={null}>
-          <StickyScrollMap {...section} />
+          <StickyScrollMap {...data} />
         </Suspense>
       );
     default:

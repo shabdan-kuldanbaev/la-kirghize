@@ -29,9 +29,9 @@ function Logo({
         transition-all 
         ease-in-out 
         duration-300 
-        text-2xl 
+        text-lg 
         whitespace-nowrap
-        lg:text-4xl 
+        lg:text-xl 
         active:scale-110
         `,
         bulgarianBridge.className,
@@ -42,8 +42,8 @@ function Logo({
       <Image
         src={themes[theme]}
         alt="La Kirghize"
-        width={48}
-        height={48}
+        width={32}
+        height={32}
       />
       La Kirghize
     </Link>
