@@ -1,7 +1,8 @@
 'use client';
 
-import clsx from 'clsx';
 import Link from 'next/link';
+
+import cn from '@/lib/utils';
 
 export default function ContactButton(
   {
@@ -16,14 +17,11 @@ export default function ContactButton(
   return (
     <Link
       type="button"
-      className={clsx('p-[3px] relative', className)}
+      className={cn('px-4 py-2 rounded-full bg-[#1ED760] font-bold text-white tracking-widest uppercase transform hover:scale-105 hover:bg-[#21e065] transition-colors duration-200', className)}
       href={path}
       {...rest}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-      <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-        {title}
-      </div>
+      {title}
     </Link>
   );
 }
