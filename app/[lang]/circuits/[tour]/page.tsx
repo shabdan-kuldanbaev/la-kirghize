@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata | nu
     params: {
       lang,
       slug: tour,
-      isTour: false,
+      isTour: true,
     },
   });
 
