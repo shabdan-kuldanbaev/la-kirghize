@@ -3,6 +3,10 @@ import { ILinks } from '@/types/types';
 const links: ILinks = {
   fr: [
     {
+      title: 'Accueil',
+      path: '/fr',
+    },
+    {
       title: 'Mes circuits',
       path: '/fr/circuits',
       items: [
@@ -47,6 +51,10 @@ const links: ILinks = {
     },
   ],
   en: [
+    {
+      title: 'Home',
+      path: '/en',
+    },
     {
       title: 'My tours',
       path: '/en/circuits',

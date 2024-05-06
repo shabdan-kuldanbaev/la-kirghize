@@ -1,0 +1,86 @@
+.menu-float__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  padding: 6px;
+  border-radius: 12px;
+  background: rgba(34,34,34, 0.8);
+  pointer-events: auto;
+  transition: all .4s;
+}
+
+.menu-float__wrapper.is-open {
+  min-width: 720px !important;
+  max-width: 1200px;
+}
+
+.menu-float__top {
+  max-width: 707px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all .4s;
+}
+
+.menu-float__wrapper.is-open .menu-float__top {
+  max-height: 500px;
+  max-width: 1200px;
+}
+
+.menu-float__menu {
+  display: none;
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 30px;
+  background: #2c2c2c;
+  color: #fff;
+  border-radius: 8px;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.menu-float__menu-content {
+  max-width: 0;
+  opacity: 0;
+  transition: all .4s;
+}
+
+.menu-float__menu-content.is-show {
+  opacity: 1;
+  max-width: 1200px;
+}
+
+.menu-float__menu.is-active {
+  display: block;
+}
+
+.menu-float__bottom {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-float__wrapper.is-open-main .menu-float__bottom {
+  position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+  .menu-float__top {
+    min-width: auto !important;
+    overflow-y: auto;
+}
+  
+  .menu-float__wrapper {
+    min-width: 0 !important;
+  }
+
+  .menu-float__wrapper.is-open {
+    min-width: 100% !important;
+  }
+
+  .menu-float__wrapper.is-open .menu-float__top {
+    max-height: 100vh;
+  }
+}

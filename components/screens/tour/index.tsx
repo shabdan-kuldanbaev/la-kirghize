@@ -38,18 +38,23 @@ function SlugScreen({ data }: Props) {
 
   return (
     <>
-      <div className="sticky top-0 bg-color-light-gray z-40 p-4 scroll-auto">
-        <div className="flex justify-start gap-4 max-w-5xl mx-auto">
-          {sections.map(({ _id, heading }) => (
-            <Link
-              scroll
-              key={_id}
-              href={`#${_id}`}
-              className={cn('px-4 rounded-lg transition-all', { 'bg-black text-white': activeSection === _id })}
-            >
-              {heading}
-            </Link>
-          ))}
+      <div className="sticky top-0 bg-color-light-gray z-40 py-4  scroll-auto">
+        <div className="max-w-6xl px-2 mx-auto overflow-x-scroll no-visible-scrollbar">
+          <div className="flex justify-start gap-4">
+            {sections.map(({ _id, heading }) => (
+              <Link
+                scroll
+                key={_id}
+                href={`#${_id}`}
+                className={cn(
+                  'px-4 rounded-lg transition-all whitespace-nowrap last:mr-2',
+                  { 'bg-black text-white': activeSection === _id },
+                )}
+              >
+                {heading}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
       <div>

@@ -53,11 +53,11 @@ function StickyScrollMap(props: Props) {
   });
 
   return (
-    <section id={_id} className="px-4 bg-color-light-gray">
+    <section id={_id} className="px-2 bg-color-light-gray">
       <div
         ref={ref}
         className={`
-        py-14
+        py-10
         h-auto lg:h-[100svh]
         m-auto
         max-w-6xl
@@ -110,7 +110,7 @@ function StickyScrollMap(props: Props) {
                 {(content.contentList || []).map((item: IContent) => (
                   <div key={item._id} className="flex justify-start items-end mt-2">
                     {item.icon && (
-                      <div className="relative w-8 h-8">
+                      <div className="relative w-8 h-8 flex-shrink-0">
                         <Image
                           src={ICONS[item.icon]}
                           alt={`${item.icon}`}
