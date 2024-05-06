@@ -1,8 +1,10 @@
 'use client';
 
-import clsx from 'clsx';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 import { Locale, i18n } from '@/i18n.config';
+import cn from '@/lib/utils';
 
 function LangSwitcher(
   {
@@ -14,15 +16,16 @@ function LangSwitcher(
     className?: string,
   },
 ) {
+  const path = usePathname();
   const { locales } = i18n;
 
   return (
-    <div className={clsx('flex items-center space-x-2', className)}>
+    <div className={cn('flex items-center space-x-2', className)}>
       {locales.map((locale) => (
         <Link
           key={locale}
-          href={`/${locale}`}
-          className={clsx(
+          href={path.replace(`/${lang}/`, `/${locale}/`)}
+          className={cn(
             'px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90',
             { 'pointer-events-none bg-primary/50': locale === lang },
           )}
