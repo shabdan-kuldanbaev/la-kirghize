@@ -35,6 +35,7 @@
         "import/prefer-default-export": "off",
         "react/no-unused-prop-types": "off",
         "react/no-array-index-key": "off",
-        "@typescript-eslint/naming-convention": "off"
+        "@typescript-eslint/naming-convention": "off",
+        "max-len": "off"
     }
 }
