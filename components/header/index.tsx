@@ -84,7 +84,7 @@ export default function Header() {
                           className={`
                           relative
                           hover:opacity-70
-                          font-light text-xs pl-3 text-[#a7a7a7] 
+                          font-light text-sm pl-3 text-[#a7a7a7] 
                           before:absolute before:-left-0.5 before:top-1
                           before:w-1 before:h-1 before:bg-[#C8E4D3] before:rounded-[50%]
                         `}
@@ -104,7 +104,7 @@ export default function Header() {
                             className={`
                             relative
                             hover:opacity-70
-                            font-light text-xs pl-3 text-[#a7a7a7] 
+                            font-light text-sm pl-3 text-[#a7a7a7] 
                             before:absolute before:-left-0.5 before:top-1
                             before:w-1 before:h-1 before:bg-[#C8E4D3] before:rounded-[50%]
                           `}
@@ -120,7 +120,7 @@ export default function Header() {
                             hover:border-white
                               hover:opacity-70
                               border-l-[1px] border-transparent
-                              transition-all duration-[400ms]
+                              transition-all duration-300
                             `}
                               href={item.path}
                               key={item.title}
@@ -145,7 +145,7 @@ export default function Header() {
               <div className={cn(`
                   flex justify-between items-center gap-2 px-1
                   text-white bg-[#222] rounded-[8px]
-                  overflow-hidden transition-all duration-[1000ms]
+                  overflow-hidden transition-all duration-300
                 `, { 'w-full': isOpen })}
               >
                 <Hamburger
@@ -170,7 +170,7 @@ export default function Header() {
                     hidden lg:block
                     p-2 rounded-[8px] text-[#d3d3d3]
                     border-solid border-[1px] border-[#4e4e4e] text-sm font-light
-                    hover:border-[#a7a7a7] transition-all duration-[400ms]
+                    hover:border-[#a7a7a7] transition-all duration-300
                   `, { 'border-[#a7a7a7]': path === item.path })}
                     key={item.path}
                   >
