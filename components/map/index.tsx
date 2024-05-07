@@ -1,27 +1,20 @@
 'use client';
 
 import {
+  memo,
   useEffect,
   useRef,
   useState,
 } from 'react';
-import mapboxgl, {
-  FlyToOptions,
-  LngLatLike,
-} from 'mapbox-gl';
+import mapboxgl, { FlyToOptions } from 'mapbox-gl';
 
 import cn from '@/lib/utils';
+import { IPosition } from '@/types/types';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-export interface IPosition {
-  center: LngLatLike;
-  zoom: number;
-  text?: string;
-}
-
-export interface MapboxMapProps {
+interface MapboxMapProps {
   initialPosition: IPosition;
-  flyToOptions: FlyToOptions | null;
+  flyToOptions: FlyToOptions;
   markers: IPosition[];
   className?: string;
 }
@@ -29,15 +22,15 @@ export interface MapboxMapProps {
 const accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 const mapStyle = process.env.NEXT_PUBLIC_MAPBOX_MAP_STYLE;
 
-function MapboxMap({
+const MapboxMap = memo(({
   className,
   initialPosition = {
     center: [74.7387, 41.2228],
     zoom: 4,
   },
-  flyToOptions = null,
+  flyToOptions,
   markers,
-}: MapboxMapProps) {
+}: MapboxMapProps) => {
   const mapNode = useRef(null);
   const [map, setMap] = useState<mapboxgl.Map>();
 
@@ -85,10 +78,7 @@ function MapboxMap({
     }
   }, [flyToOptions]);
 
-  return (
-    <div ref={mapNode} className={cn('w-full h-full', className)} />
-
-  );
-}
+  return <div ref={mapNode} className={cn('w-full h-full', className)} />;
+});
 
 export default MapboxMap;

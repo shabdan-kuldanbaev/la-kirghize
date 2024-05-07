@@ -3,37 +3,30 @@
 import Link from 'next/link';
 import { useParams, usePathname } from 'next/navigation';
 
-import { i18n } from '@/i18n.config';
+import { Locale, i18n } from '@/i18n.config';
 import cn from '@/lib/utils';
 
 function LangSwitcher(
-  {
-    className,
-  }:
-  {
-    className?: string,
-  },
+  { className }:
+  { className?: string },
 ) {
-  const { lang } = useParams();
   const path = usePathname();
+  const { lang } :{ lang: Locale } = useParams();
+
   const { locales } = i18n;
+  const replaceTo = locales.find((i) => i !== lang);
 
   return (
-    <div className={cn('flex items-center gap-2', className)}>
-      {locales.map((locale) => (
-        <Link
-          key={locale}
-          href={path.replace(`/${lang}/`, `/${locale}/`)}
-          className={cn(`block
+    <Link
+      href={path.replace(new RegExp(lang, 'g'), `${replaceTo}`)}
+      className={cn(`block
           py-2 px-4 rounded-[8px] text-[#d3d3d3]
           border-solid border-[1px] border-[#4e4e4e] text-sm font-light
           hover:border-[#a7a7a7] transition-all duration-300
-        `, { 'border-[#a7a7a7]': lang === locale })}
-        >
-          {locale}
-        </Link>
-      ))}
-    </div>
+        `, className)}
+    >
+      {replaceTo}
+    </Link>
   );
 }
 

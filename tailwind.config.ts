@@ -24,6 +24,7 @@ const config = {
         'color-base': '#f2f2f2',
         'color-light-gray': '#E9E9E9',
         wrapper: 'rgba(34,34,34, 0.8)',
+        menu: '#2c2c2c',
         blue: '#c0d8d7',
         darkBlue: '#002921',
         pastel: '#f2f7f7',

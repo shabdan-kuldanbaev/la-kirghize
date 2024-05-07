@@ -1,5 +1,5 @@
 import { PortableTextProps } from '@portabletext/react';
-import { IPosition } from '@/components/map';
+import { LngLatLike } from 'mapbox-gl';
 
 export type ILinks = {
   fr: NavLink[];
@@ -67,4 +67,10 @@ export interface LinkItem {
 export interface ContactLink {
   title: string;
   path: string;
+}
+
+export interface IPosition {
+  center: LngLatLike;
+  zoom: number;
+  text?: string;
 }

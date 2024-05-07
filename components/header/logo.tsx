@@ -14,6 +14,7 @@ const themes = {
 
 function Logo({
   className, theme = 'dark',
+  ...rest
 } : {
   className?: string,
   theme?: Theme
@@ -32,12 +33,12 @@ function Logo({
         text-lg 
         whitespace-nowrap
         lg:text-xl 
-        active:scale-110
         `,
         bulgarianBridge.className,
         theme === 'dark' ? 'text-black' : 'text-white',
         className,
       )}
+      {...rest}
     >
       <Image
         src={themes[theme]}

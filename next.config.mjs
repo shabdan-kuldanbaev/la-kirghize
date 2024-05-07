@@ -10,6 +10,8 @@ const nextConfig = {
   },
   experimental: {
     taint: true,
+    windowHistorySupport:true 
+
   },
 };
 

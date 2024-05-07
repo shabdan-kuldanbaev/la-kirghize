@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  RefObject,
   useRef,
   useState,
 } from 'react';
@@ -15,24 +16,27 @@ import MapboxMap from '@/components/map';
 import ICONS from '@/lib/icons';
 import { IContent, ISection } from '@/types/types';
 
-type Props = Pick<ISection, '_id' | 'heading' | 'contentList'>;
+interface Props extends Pick<ISection, '_id' | 'heading' | 'contentList'> {
+  elRef?: RefObject<HTMLElement>;
+}
 
 function StickyScrollMap(props: Props) {
   const {
     _id,
+    elRef,
     heading,
     contentList,
   } = props;
 
+  const refContainer = useRef(null);
   const [markers] = useState(() => contentList
     .map((item) => ({
       ...item?.position,
       text: item.heading.split('||')[0],
     })));
   const [activeCard, setActiveCard] = useState<number>(0);
-  const ref = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
-    container: ref,
+    container: refContainer,
     offset: ['start start', 'end start'],
   });
   const cardLength = contentList?.length;
@@ -53,9 +57,13 @@ function StickyScrollMap(props: Props) {
   });
 
   return (
-    <section id={_id} className="px-2 bg-color-light-gray">
+    <section
+      id={_id}
+      ref={elRef}
+      className="px-2 md:px-4 lg:px-10 bg-color-light-gray scroll-my-14"
+    >
       <div
-        ref={ref}
+        ref={refContainer}
         className={`
         py-10
         h-auto lg:h-[100svh]
@@ -74,6 +82,7 @@ function StickyScrollMap(props: Props) {
         overflow-hidden 
         static lg:sticky
         h-auto lg:h-full
+        max-w-full lg:max-w-[50%] w-full
         lg:px-4
         top-0
         z-10
@@ -87,7 +96,7 @@ function StickyScrollMap(props: Props) {
             className="lg:w-[600px] h-[350px] rounded-md"
           />
         </div>
-        <div className="block div relative items-start">
+        <div className="block div relative items-start max-w-full lg:max-w-[50%] w-full">
           <div className="max-w-4xl">
             {contentList?.map((content, index) => (
               <article key={content.heading + index} className="pb-16">
