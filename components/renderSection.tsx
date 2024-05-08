@@ -6,6 +6,7 @@ import { ISection } from '@/types/types';
 
 const Hero = dynamic(() => import('@/components/sections/hero'));
 const StickyScrollMap = dynamic(() => import('@/components/sections/sticky-scroll-map'));
+const Intro = dynamic(() => import('@/components/sections/intro'));
 
 interface Props extends ISection {
   elRef?: RefObject<HTMLElement>
@@ -25,6 +26,12 @@ function RenderSection(data: Props) {
       return (
         <Suspense fallback={null}>
           <StickyScrollMap {...data} />
+        </Suspense>
+      );
+    case SECTION_TYPES.intro.value:
+      return (
+        <Suspense fallback={null}>
+          <Intro {...data} />
         </Suspense>
       );
     default:

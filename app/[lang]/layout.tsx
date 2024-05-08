@@ -4,7 +4,6 @@ import { Analytics } from '@vercel/analytics/react';
 import { Suspense } from 'react';
 
 import Header from '@/components/header';
-import Footer from '@/components/footer';
 
 import ClientSideScrollRestorer from '@/lib/providers';
 import { Locale } from '@/i18n.config';
@@ -19,18 +18,16 @@ export default async function RootLayout({
   params:{ lang: Locale }
 }>) {
   return (
-    <html lang={lang} className="h-full">
-      <body className={cn('relative h-full flex flex-col', quicksand.className)}>
+    <html lang={lang}>
+      <body className={cn('', quicksand.className)}>
         <Header />
-        <main className="flex-auto">
-          {children}
-          <SpeedInsights />
-          <Analytics />
-        </main>
+        {children}
+        <SpeedInsights />
+        <Analytics />
         <Suspense>
           <ClientSideScrollRestorer />
         </Suspense>
-        <Footer lang={lang} />
+        {/* <Footer lang={lang} /> */}
       </body>
     </html>
   );

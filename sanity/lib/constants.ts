@@ -6,7 +6,7 @@ export const supportedLanguages = [
 ];
 
 export const SECTION_TYPES = {
-  info: { title: 'Info section', value: 'info' },
+  intro: { title: 'Intro section', value: 'intro' },
   hero: { title: 'Hero section', value: 'hero' },
   sticky: { title: 'Sticky section', value: 'sticky' },
 };

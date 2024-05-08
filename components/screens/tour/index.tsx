@@ -55,7 +55,10 @@ function SlugScreen({ data }: Props) {
   }, [activeSection]);
 
   return (
-    <>
+    <main>
+      <section>
+        {}
+      </section>
       <div className="sticky top-0 bg-color-light-gray z-40 py-4 px-2 md:px-4 lg:px-10 scroll-auto">
         <div className="max-w-6xl mx-auto overflow-x-scroll no-visible-scrollbar">
           <div className="flex justify-start gap-4">
@@ -84,7 +87,7 @@ function SlugScreen({ data }: Props) {
           />
         ))}
       </div>
-    </>
+    </main>
   );
 }
 

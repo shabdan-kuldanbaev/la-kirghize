@@ -62,7 +62,6 @@
 html, 
 body {
   scroll-behavior: smooth;
-  background-color: #E9E9E9;
 }
 
 .no-visible-scrollbar {

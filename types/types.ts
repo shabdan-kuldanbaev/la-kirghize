@@ -21,6 +21,7 @@ export interface ISection {
   contentFile: string;
   sectionType: string;
   contentList: IContent[];
+  imageList: any;
 }
 
 export interface IContent {
