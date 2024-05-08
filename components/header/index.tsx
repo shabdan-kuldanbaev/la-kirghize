@@ -55,7 +55,7 @@ export default function Header() {
           >
             <div
               className={cn(
-                `min-w-[auto] overflow-y-auto max-h-0
+                `min-w-full overflow-y-auto max-h-0
                 lg:max-w-[707px] transition-all duration-500 
                 overflow-hidden`,
                 { 'max-w-7xl max-h-screen lg:max-h-screen': isOpen },
@@ -63,7 +63,7 @@ export default function Header() {
             >
               <div className={cn(
                 `hidden mb-2 p-7 bg-menu gap-2 w-full text-white
-                rounded-lg z-[-1] transition-[] duration-500`,
+                rounded-lg z-[-1] transition-all duration-500`,
                 { 'block div': isOpen },
               )}
               >

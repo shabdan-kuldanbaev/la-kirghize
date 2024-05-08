@@ -14,10 +14,12 @@ const themes = {
 
 function Logo({
   className, theme = 'dark',
+  size,
   ...rest
 } : {
   className?: string,
-  theme?: Theme
+  theme?: Theme,
+  size?: number
 }) {
   return (
     <Link
@@ -43,8 +45,8 @@ function Logo({
       <Image
         src={themes[theme]}
         alt="La Kirghize"
-        width={32}
-        height={32}
+        width={size || 32}
+        height={size || 32}
       />
       La Kirghize
     </Link>

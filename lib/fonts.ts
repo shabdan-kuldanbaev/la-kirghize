@@ -1,7 +1,12 @@
-import { Josefin_Sans } from 'next/font/google';
+import { Josefin_Sans, Quicksand, Roboto } from 'next/font/google';
 import localFont from 'next/font/local';
 
 export const josefin = Josefin_Sans({ subsets: ['latin'] });
+export const quicksand = Quicksand({ subsets: ['latin'] });
+export const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['100', '400', '500', '700'],
+});
 
 export const bulgarianBridge = localFont({
   src: [

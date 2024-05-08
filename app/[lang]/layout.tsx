@@ -8,7 +8,7 @@ import Footer from '@/components/footer';
 
 import ClientSideScrollRestorer from '@/lib/providers';
 import { Locale } from '@/i18n.config';
-import { josefin } from '@/lib/fonts';
+import { quicksand } from '@/lib/fonts';
 import './globals.css';
 
 export default async function RootLayout({
@@ -20,7 +20,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang={lang} className="h-full">
-      <body className={cn('relative h-full flex flex-col', josefin.className)}>
+      <body className={cn('relative h-full flex flex-col', quicksand.className)}>
         <Header />
         <main className="flex-auto">
           {children}
