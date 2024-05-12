@@ -1,6 +1,7 @@
 import { groq } from 'next-sanity';
 
 export const PAGE_GROQ = groq`*[_type == 'page' && slug.current == $slug && isTour == $isTour][0] {
+  ...,
   'slug': slug.current,
   sections[]-> {
     ...,

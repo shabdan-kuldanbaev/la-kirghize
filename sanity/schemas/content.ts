@@ -71,6 +71,11 @@ export default defineType({
       type: 'localeWordsList',
     }),
     defineField({
+      name: 'url',
+      title: 'Url',
+      type: 'string',
+    }),
+    defineField({
       title: 'Image list',
       name: 'imageList',
       type: 'array',

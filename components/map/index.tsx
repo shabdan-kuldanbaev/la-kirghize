@@ -8,8 +8,8 @@ import {
 } from 'react';
 import mapboxgl, { FlyToOptions } from 'mapbox-gl';
 
-import cn from '@/lib/utils';
 import { IPosition } from '@/types/types';
+import { cn } from '@/lib/utils';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 interface MapboxMapProps {
@@ -78,7 +78,11 @@ const MapboxMap = memo(({
     }
   }, [flyToOptions]);
 
-  return <div ref={mapNode} className={cn('w-full h-full', className)} />;
+  return (
+    <div className={cn('w-full h-full relative overflow-hidden', className)}>
+      <div ref={mapNode} className="absolute top-0 left-0 w-full h-full" />
+    </div>
+  );
 });
 
 export default MapboxMap;

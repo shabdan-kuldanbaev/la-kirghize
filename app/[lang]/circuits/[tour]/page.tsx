@@ -1,12 +1,13 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
+import SlugScreen from '@/components/screens/tour';
+
 import { sanityFetch } from '@/sanity/lib/fetch';
 import urlForImage from '@/sanity/lib/image';
 import { META_GROQ, PAGE_GROQ } from '@/lib/queries';
 import { ICONS } from '@/lib/metaIcons';
 import { IPage } from '@/types/types';
-import SlugScreen from '@/components/screens/tour';
 
 type Props = {
   params: {
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata | nu
   const metaImage = page.metaImage && urlForImage(page.metaImage);
 
   return {
-    metadataBase: new URL(`https://la-kirghize.com/${lang}/tours`),
+    metadataBase: new URL(`https://la-kirghize.com/${lang}/circuits/${tour}`),
     title: page.metaTitle,
     description: page.metaDescription,
     keywords: page.keywords,

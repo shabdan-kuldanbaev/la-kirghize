@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation';
-import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
 
 import { sanityFetch } from '@/sanity/lib/fetch';
@@ -8,12 +7,11 @@ import { META_GROQ, PAGE_GROQ } from '@/lib/queries';
 import { Locale } from '@/i18n.config';
 import { ICONS } from '@/lib/metaIcons';
 import { IPage, ISection } from '@/types/types';
+import RenderSection from '@/components/sections/renderSection';
 
 type Props = {
   params: { lang: string }
 };
-
-const RenderSection = dynamic(() => import('@/components/renderSection'));
 
 export async function generateMetadata({ params }: Props): Promise<Metadata | null> {
   const { lang } = params;

@@ -1,9 +1,9 @@
-import cn from 'clsx';
 import Link from 'next/link';
 import Image from 'next/image';
 import { bulgarianBridge } from '@/lib/fonts';
 import darkSvg from '@/public/logo.svg';
 import lightSvg from '@/public/logoLight.svg';
+import { cn } from '@/lib/utils';
 
 type Theme = 'dark' | 'light';
 

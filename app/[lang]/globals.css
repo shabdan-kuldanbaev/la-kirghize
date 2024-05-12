@@ -24,6 +24,7 @@
     --input: 240 5.9% 90%;
     --ring: 240 10% 3.9%;
     --radius: 0.5rem;
+    --light-gray: #E9E9E9;
   }
 
   .dark {
@@ -61,7 +62,17 @@
 
 html, 
 body {
-  scroll-behavior: smooth;
+  background-color: var(--light-gray);
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 92px;
+  height: 100%;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .no-visible-scrollbar {
@@ -69,7 +80,7 @@ body {
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
 }
- 
+
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
 }

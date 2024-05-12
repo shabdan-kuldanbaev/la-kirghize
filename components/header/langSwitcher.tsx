@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useParams, usePathname } from 'next/navigation';
 
 import { Locale, i18n } from '@/i18n.config';
-import cn from '@/lib/utils';
+import { cn } from '@/lib/utils';
 
 function LangSwitcher(
   { className }:

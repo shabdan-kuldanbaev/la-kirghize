@@ -18,17 +18,14 @@ const config = {
       },
     },
     extend: {
+      height: {
+        section: 'calc(100vh - 92px)',
+      },
       colors: {
         salad: '#f0ff3d',
-        dark: '#001713',
-        'color-base': '#f2f2f2',
-        'color-light-gray': '#E9E9E9',
+        'color-light-gray': 'var(--light-gray)',
         wrapper: 'rgba(34,34,34, 0.8)',
         menu: '#2c2c2c',
-        blue: '#c0d8d7',
-        darkBlue: '#002921',
-        pastel: '#f2f7f7',
-        blured: 'rgba(25,25,25,.4)',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

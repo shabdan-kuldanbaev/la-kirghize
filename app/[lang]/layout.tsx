@@ -1,4 +1,3 @@
-import cn from 'clsx';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import { Suspense } from 'react';
@@ -19,7 +18,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang={lang}>
-      <body className={cn('', quicksand.className)}>
+      <body className={quicksand.className}>
         <Header />
         {children}
         <SpeedInsights />

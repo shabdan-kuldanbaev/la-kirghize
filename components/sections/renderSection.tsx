@@ -4,9 +4,9 @@ import { RefObject, Suspense } from 'react';
 import { SECTION_TYPES } from '@/sanity/lib/constants';
 import { ISection } from '@/types/types';
 
+const Intro = dynamic(() => import('@/components/sections/intro'));
 const Hero = dynamic(() => import('@/components/sections/hero'));
 const StickyScrollMap = dynamic(() => import('@/components/sections/sticky-scroll-map'));
-const Intro = dynamic(() => import('@/components/sections/intro'));
 
 interface Props extends ISection {
   elRef?: RefObject<HTMLElement>

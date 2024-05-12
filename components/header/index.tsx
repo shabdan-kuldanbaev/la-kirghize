@@ -15,7 +15,7 @@ import Logo from './logo';
 
 import links from '@/lib/links/headerLinks';
 import { Locale } from '@/i18n.config';
-import cn from '@/lib/utils';
+import { cn } from '@/lib/utils';
 
 export default function Header() {
   const ref: RefObject<HTMLDivElement> = useRef(null);

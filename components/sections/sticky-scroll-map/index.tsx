@@ -2,7 +2,6 @@
 
 import {
   RefObject,
-  useRef,
   useState,
 } from 'react';
 import {
@@ -12,6 +11,7 @@ import {
 import Image from 'next/image';
 
 import MapboxMap from '@/components/map';
+import Reveal from '@/components/ui/reveal-animation';
 
 import ICONS from '@/lib/icons';
 import { IContent, ISection } from '@/types/types';
@@ -28,7 +28,6 @@ function StickyScrollMap(props: Props) {
     contentList,
   } = props;
 
-  const refContainer = useRef(null);
   const [markers] = useState(() => contentList
     .map((item) => ({
       ...item?.position,
@@ -36,7 +35,7 @@ function StickyScrollMap(props: Props) {
     })));
   const [activeCard, setActiveCard] = useState<number>(0);
   const { scrollYProgress } = useScroll({
-    container: refContainer,
+    container: elRef,
     offset: ['start start', 'end start'],
   });
   const cardLength = contentList?.length;
@@ -57,86 +56,78 @@ function StickyScrollMap(props: Props) {
   });
 
   return (
-    <section
-      id={_id}
-      ref={elRef}
-      className="px-2 md:px-4 lg:px-10 bg-color-light-gray scroll-my-14"
-    >
-      <div
-        ref={refContainer}
+    <Reveal>
+      <section
+        id={_id}
+        ref={elRef}
         className={`
-        py-10
-        h-auto lg:h-[100svh]
-        m-auto
-        max-w-6xl
-        overflow-y-auto 
-        flex justify-start lg:justify-between
-        flex-col lg:flex-row-reverse
-        gap-8
         relative
-        no-visible-scrollbar
-        `}
+        bg-color-light-gray 
+        snap-start snap-always 
+        h-section overflow-y-auto no-visible-scrollbar
+        block lg:flex
+        flex-col lg:flex-row-reverse
+        justify-center gap-8
+      `}
       >
         <div className={`
-        flex-shrink-0 
-        overflow-hidden 
-        static lg:sticky
-        h-auto lg:h-full
-        max-w-full lg:max-w-[50%] w-full
-        lg:px-4
-        top-0
-        z-10
+          sticky top-0 z-10
+          pt-4
+          lg:h-full
+          overflow-hidden 
+          bg-color-light-gray
+          max-w-full lg:max-w-lg w-full
       `}
         >
-          <h2 className="text-2xl font-bold mb-4 text-right">{heading}</h2>
+          <h2 className="text-2xl font-bold mb-4 text-right px-2">{heading}</h2>
           <MapboxMap
             initialPosition={{ ...contentList[0]?.position, zoom: 6 }}
             flyToOptions={contentList[activeCard]?.position}
             markers={markers}
-            className="lg:w-[600px] h-[350px] rounded-md"
+            className="h-[18rem] lg:rounded-xl"
           />
         </div>
-        <div className="block div relative items-start max-w-full lg:max-w-[50%] w-full">
+        <div className="block div relative items-start max-w-full lg:max-w-lg w-full px-2 pt-4">
           <div className="max-w-4xl">
             {contentList?.map((content, index) => (
               <article key={content.heading + index} className="pb-16">
                 {content.heading && (
-                  <h3 className="text-xl font-bold text-black">
-                    {content.heading
-                      .split('||')
-                      .map((text) => (
-                        <span key={text} className="first:whitespace-nowrap first:text-white first:px-4 first:bg-black first:rounded-sm first:mr-4">
-                          {text}
-                        </span>
-                      ))}
-                  </h3>
+                <h3 className="text-xl font-bold text-black">
+                  {content.heading
+                    .split('||')
+                    .map((text) => (
+                      <span key={text} className="first:whitespace-nowrap first:text-white first:px-4 first:bg-black first:rounded-sm first:mr-4">
+                        {text}
+                      </span>
+                    ))}
+                </h3>
                 )}
                 {content.description && (
-                  <p className="mt-5 text-black">
-                    {content.description}
-                  </p>
+                <p className="mt-5 text-black">
+                  {content.description}
+                </p>
                 )}
                 {(content.contentList || []).map((item: IContent) => (
                   <div key={item._id} className="flex justify-start items-end mt-2">
                     {item.icon && (
-                      <div className="relative w-8 h-8 flex-shrink-0">
-                        <Image
-                          src={ICONS[item.icon]}
-                          alt={`${item.icon}`}
-                          sizes="100vw"
-                          fill
-                          style={{
-                            objectFit: 'cover',
-                          }}
-                        />
-                      </div>
+                    <div className="relative w-8 h-8 flex-shrink-0">
+                      <Image
+                        src={ICONS[item.icon]}
+                        alt={`${item.icon}`}
+                        sizes="100vw"
+                        fill
+                        style={{
+                          objectFit: 'cover',
+                        }}
+                      />
+                    </div>
                     )}
                     {(item.heading && item.description) && (
-                      <h5 className="font-bold ml-3 text-base">
-                        {item.heading}
-                        :
-                        <span className="font-normal pl-3">{item.description}</span>
-                      </h5>
+                    <h5 className="font-bold ml-3 text-base">
+                      {item.heading}
+                      :
+                      <span className="font-normal pl-3">{item.description}</span>
+                    </h5>
                     )}
                   </div>
                 ))}
@@ -144,8 +135,8 @@ function StickyScrollMap(props: Props) {
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </Reveal>
   );
 }
 

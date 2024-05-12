@@ -12,6 +12,7 @@ export interface IPage {
   metaTitle: string;
   metaDescription: string;
   keywords: string[];
+  title: string;
 }
 
 export interface ISection {
