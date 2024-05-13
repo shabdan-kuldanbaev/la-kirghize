@@ -60,19 +60,10 @@
   }
 }
 
-html, 
+html,
 body {
   background-color: var(--light-gray);
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 92px;
   height: 100%;
-}
-
-html {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 .no-visible-scrollbar {

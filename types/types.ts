@@ -1,5 +1,6 @@
 import { PortableTextProps } from '@portabletext/react';
 import { LngLatLike } from 'mapbox-gl';
+import type { Image } from 'sanity';
 
 export type ILinks = {
   fr: NavLink[];
@@ -8,7 +9,7 @@ export type ILinks = {
 export interface IPage {
   slug: string;
   sections: ISection[];
-  metaImage: any;
+  metaImage: Image;
   metaTitle: string;
   metaDescription: string;
   keywords: string[];
@@ -22,7 +23,7 @@ export interface ISection {
   contentFile: string;
   sectionType: string;
   contentList: IContent[];
-  imageList: any;
+  imageList: Image[];
 }
 
 export interface IContent {
@@ -32,7 +33,7 @@ export interface IContent {
   text: Pick<PortableTextProps, 'value'>
   contentList: IContent[];
   wordsList: string[];
-  image: any;
+  image: Image;
   position: IPosition;
   icon: string;
 }
@@ -42,7 +43,7 @@ export interface IPageMetadata {
   metaTitle: string;
   metaDescription: string;
   keywords: string[];
-  metaImage: any;
+  metaImage: Image;
 }
 
 export type DataFetch = IPage & IPageMetadata;
