@@ -13,7 +13,6 @@ import {
 import Image from 'next/image';
 
 import MapboxMap from '@/components/map';
-import Reveal from '@/components/ui/reveal-animation';
 
 import ICONS from '@/lib/icons';
 import { IContent, ISection } from '@/types/types';
